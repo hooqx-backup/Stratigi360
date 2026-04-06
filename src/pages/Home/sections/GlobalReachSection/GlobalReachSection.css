@@ -1,0 +1,151 @@
+.global-reach {
+  background: #f7f7f7;
+  padding: 60px 0;
+}
+
+.global-reach__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 0;
+  align-items: stretch;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.10);
+}
+
+/* ── Left: World Map ── */
+.global-reach__map {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 32px;
+}
+
+.global-reach__map-img {
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Right: Contact Panel ── */
+.global-reach__panel {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 380px;
+}
+
+.global-reach__panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(180, 20, 20, 0.72);
+}
+
+.global-reach__panel-content {
+  position: relative;
+  z-index: 1;
+  padding: 48px 40px;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Headings */
+.global-reach__contact-heading {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 28px;
+  color: #fff;
+}
+
+.global-reach__social-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Contact list */
+.global-reach__contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.global-reach__contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1rem;
+}
+
+.global-reach__contact-list i {
+  font-size: 1.1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.global-reach__contact-list a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.global-reach__contact-list a:hover {
+  opacity: 0.8;
+}
+
+/* Socials */
+.global-reach__socials {
+  display: flex;
+  gap: 14px;
+}
+
+.global-reach__socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.global-reach__socials a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .global-reach__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .global-reach__map {
+    padding: 32px 20px;
+  }
+}

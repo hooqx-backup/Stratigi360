@@ -1,0 +1,251 @@
+/* ============================================================
+   NAVBAR – Stratigi360
+   Topbar: normal flow (above hero)
+   Navbar: sticky, overlaps top of hero
+   ============================================================ */
+
+:root {
+  --topbar-height: 36px;
+  --navbar-height: 68px;
+}
+
+/* ════════════════════════════════════════
+   TOP BAR  – normal flow, sits above hero
+   ════════════════════════════════════════ */
+.topbar {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 7px 0;
+  position: relative;
+  z-index: 999;
+  width: 100%;
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Social icons – left */
+.topbar__social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar__social a {
+  color: #555;
+  font-size: 13px;
+  transition: color var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.topbar__social a:hover {
+  color: var(--color-accent);
+}
+
+/* Contact – right */
+.topbar__contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #444;
+  font-size: 12.5px;
+  font-weight: 500;
+  transition: color var(--transition);
+  text-decoration: none;
+}
+
+.topbar__item:hover {
+  color: var(--color-accent);
+}
+
+.topbar__item i {
+  font-size: 12px;
+  color: var(--color-accent);
+}
+
+.topbar__divider {
+  width: 1px;
+  height: 14px;
+  background-color: #ccc;
+}
+
+/* ════════════════════════════════════════
+   NAVBAR  – sticky, overlaps hero below it
+   ════════════════════════════════════════ */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--color-white);
+  border-bottom: 1px solid #e8e8e8;
+  transition: box-shadow var(--transition);
+}
+
+.navbar--scrolled {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--navbar-height);
+  gap: 24px;
+}
+
+/* ── Logo ── */
+.navbar__logo {
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.navbar__logo-stratigi {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.navbar__logo-360 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 1px;
+  line-height: 1;
+  align-self: flex-end;
+  margin-bottom: 2px;
+}
+
+/* ── Nav Links ── */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 8px 14px;
+  text-decoration: none;
+  transition: color var(--transition);
+  display: block;
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--color-accent);
+}
+
+/* ── Actions ── */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Hamburger ── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+}
+
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition), width var(--transition);
+}
+
+.hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger--open span:nth-child(2) { opacity: 0; width: 0; }
+.hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile Menu ── */
+.mobile-menu {
+  background-color: var(--color-white);
+  border-top: 1px solid #eee;
+  padding: 12px 0 20px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+  z-index: 999;
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  list-style: none;
+  padding: 0 var(--space-md);
+  margin: 0;
+}
+
+.mobile-menu .navbar__link {
+  display: block;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* ════════════════════════════════════════
+   HEADER wrapper (topbar + navbar together)
+   ════════════════════════════════════════ */
+.header {
+  width: 100%;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .navbar__links { display: none; }
+  .hamburger     { display: flex; }
+}
+
+@media (max-width: 768px) {
+  .topbar__contact { display: none; }
+}
+
+@media (max-width: 480px) {
+  .navbar__inner          { height: 58px; }
+  .navbar__logo-stratigi  { font-size: 18px; }
+}

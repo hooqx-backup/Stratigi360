@@ -1,0 +1,240 @@
+{
+  "site": {
+    "name": "Stratigi360",
+    "tagline": "Business Setup & Consultation",
+    "phone": "+971 4 509 5911",
+    "phone_display": "04 509 5911",
+    "email": "info@stratigi360.com",
+    "whatsapp": "+971045095911",
+    "copyright": "Stratigi 360 @ copyright 2024-2025",
+    "description": "Tech-powered legal and tax solutions for startups and international enterprises looking to establish or expand their business globally."
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/stratigi360",
+    "instagram": "https://www.instagram.com/stratigi360",
+    "twitter": "https://www.twitter.com/stratigi360",
+    "linkedin": "https://www.linkedin.com/company/stratigi360",
+    "youtube": "https://www.youtube.com/@stratigi360"
+  },
+  "nav": {
+    "links": [
+      { "label": "Home", "href": "/" },
+      { "label": "About Us", "href": "/about" },
+      { "label": "Services", "href": "/services" },
+      { "label": "Contact Us", "href": "/contact" }
+    ],
+    "cta": "Cost Calculator"
+  },
+  "hero": {
+    "headline": "Want a swift and effective business setup?",
+    "subheadline": "Quickly Understand How Much Cost You Need to Set Up Your Businesses Across the Globe",
+    "cta": "COST CALCULATOR",
+    "rating": "4.9",
+    "reviews": "+2500"
+  },
+  "business-destiny": {
+    "heading": "Master Your Business Destiny with Stratigi360's Expertise.",
+    "subHeading": "Get the worry-free services and consistent support you need to set up your business",
+    "skylineImage": "/path-to-your-skyline-image.png"
+  },
+  "about": {
+    "heading": "About Us",
+    "body": "Welcome to Stratigi360, a beacon of innovation and efficiency in the world of business setup services where we redefine the process of establishing your business, making it seamless and stress-free. Our commitment to transparency, efficiency, and personalized service sets us apart.",
+    "body2": "Specializing in a range of vital services, including business consultations, setup, legal & tax consultations, operations consultation, collateral building, marketing management, digital solutions, virtual assistance (BPO/KPO), and investment & financial consultations, we are your one-stop solution for comprehensive business support.",
+    "cta": "Know More"
+  },
+  "process": {
+    "heading": "Work Process",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Book a Free Consultation with Our Advisor",
+        "description": "Schedule a meeting, whether in person or via Zoom, with our business setup advisors. It's helpful to have a grasp of your business activities, shareholder count, target clientele, and office space needs. Don't worry if you need guidance: our team is prepared to assist in polishing up your business plan."
+      },
+      {
+        "number": "02",
+        "title": "Choosing the Right Jurisdiction",
+        "description": "We're here to help you pick the perfect location for your company, customized to match your specific needs and target audience. Whether you're aiming for maximum operational flexibility in the Mainland, seeking specialized industry perks in a Free Zone, looking for cost-effective solutions, or even eyeing the thriving business environment from any corner of the globe with an offshore setup, we've got you covered."
+      },
+      {
+        "number": "03",
+        "title": "Trade License Application",
+        "description": "Get your paperwork game strong! We'll help you prep all the necessary registration documents — think Application Form, Memorandum of Association, Certificate of Incorporation, Bank and Residency Statements, and whatever else you might need to set up your business. Different licenses and places mean different requirements, but our team will be by your side, guiding you through the entire process."
+      },
+      {
+        "number": "04",
+        "title": "Opening a Corporate Bank Account",
+        "description": "Having a corporate bank account is a must for doing business across the globe. There are various options for local, global, and digital banks to suit your financial needs. Our expert team will work with you to figure out the perfect bank match and get all the necessary documents ready for smooth submission."
+      }
+    ]
+  },
+  "services": {
+    "label": "Our Services",
+    "heading": "Comprehensive Solutions for Every Business Need",
+    "subheading": "From strategy to execution, we cover all aspects of your business journey.",
+    "cta": "Know More",
+    "items": [
+      {
+        "icon": "fa-lightbulb",
+        "title": "Business Consultation",
+        "description": "Our consultation experts provide tailored solutions to optimize your business strategies and propel growth. Trust us to be your partner in success, offering insightful guidance for a thriving venture."
+      },
+      {
+        "icon": "fa-scale-balanced",
+        "title": "Legal & Tax Consultation",
+        "description": "Stratigi360 encompasses leading legal and tax consultants with a highly dynamic workforce that offer precise guidance to ensure compliance and optimize your financial strategies."
+      },
+      {
+        "icon": "fa-building",
+        "title": "Business Setup",
+        "description": "Easily set up your business with vital Stratigi360 guidance, as we specialize in seamless business setup solutions, consulting you through the intricacies of establishing and expanding your venture."
+      },
+      {
+        "icon": "fa-palette",
+        "title": "Collateral Building",
+        "description": "As one of the industry-leading business setup service providers in Dubai, we help you build compelling collateral that elevates your brand presence and drives business credibility."
+      },
+      {
+        "icon": "fa-gears",
+        "title": "Operations Consultation",
+        "description": "We specialize in the development of business processes and operations, providing expert operational guidance to streamline efficiency and maximize productivity across your organization."
+      },
+      {
+        "icon": "fa-bullhorn",
+        "title": "Marketing Management",
+        "description": "We have a team of experienced marketing professionals who create data-driven strategies to strengthen your brand, expand your reach, and drive sustainable business growth."
+      },
+      {
+        "icon": "fa-laptop-code",
+        "title": "Digital Solutions",
+        "description": "From web development to digital transformation, we deliver cutting-edge technology solutions tailored to modernize your business operations and accelerate your digital growth."
+      },
+      {
+        "icon": "fa-headset",
+        "title": "Virtual Assistance (BPO/KPO)",
+        "description": "Our virtual assistance services cover a wide range of business and knowledge process outsourcing needs, giving your organization expert support without the overhead."
+      },
+      {
+        "icon": "fa-chart-line",
+        "title": "Investment & Financial Consultation",
+        "description": "We provide strategic financial consultation and investment guidance to help you make sound decisions, secure funding, and position your business for long-term financial success."
+      }
+    ]
+  },
+  "values": {
+    "heading": "Why Choose Us",
+    "items": [
+      {
+        "image": "Simplified-Success.webp",
+        "title": "Simplified Success",
+        "description": "We specialize in streamlining processes and providing expert guidance to ensure your journey to success is seamless and efficient – your journey simplified."
+      },
+      {
+        "image": "Comprehensive-Excellence.webp",
+        "title": "Comprehensive Excellence",
+        "description": "Opt for Stratigi360 for all-encompassing services, ensuring success with innovative solutions and unwavering integrity. Our dedicated team excels in delivering holistic solutions, ensuring every aspect of your business thrives."
+      },
+      {
+        "image": "Personalized-Partnership.webp",
+        "title": "Personalized Partnership",
+        "description": "Select us to experience a dynamic partnership. We're not just about business; we're here to make every professional aspect of your life excellent. We tailor our services to meet your unique business needs, ensuring a collaborative journey towards success."
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "heading": "What Our Clients Say",
+    "subheading": "Real experiences from the businesses we've helped establish and grow.",
+    "items": [
+      {
+        "name": "Mohammed A.",
+        "role": "Entrepreneur, Dubai",
+        "rating": 5,
+        "image": "https://randomuser.me/api/portraits/men/32.jpg",
+        "review": "The personalized approach and attention to detail from the Stratigi360 team was outstanding. They handled every aspect of my business setup with professionalism and care. I couldn't have done it without them."
+      },
+      {
+        "name": "Zara K.",
+        "role": "CEO, Tech Startup",
+        "rating": 5,
+        "image": "https://randomuser.me/api/portraits/women/44.jpg",
+        "review": "What impressed me most was the consistency — from the initial inquiry all the way through to ongoing support. The team remained attentive and professional at every single stage of the process."
+      },
+      {
+        "name": "Michael T.",
+        "role": "International Investor",
+        "rating": 5,
+        "image": "https://randomuser.me/api/portraits/men/75.jpg",
+        "review": "An excellent overall experience. Every interaction with the Stratigi360 team was positive and productive. They truly understand what international businesses need to succeed in the UAE market."
+      }
+    ]
+  },
+  "faq": {
+    "label": "FAQ",
+    "heading": "Frequently Asked Questions",
+    "subheading": "Everything you need to know about setting up your business with Stratigi360.",
+    "items": [
+      {
+        "question": "Can foreign entrepreneurs set up businesses in Dubai?",
+        "answer": "Absolutely. Dubai is one of the most welcoming business environments for foreign entrepreneurs, with over 80% of its residents being expatriates. Foreign nationals can own 100% of their business in free zones and, with recent regulatory updates, in many mainland sectors as well."
+      },
+      {
+        "question": "How long does the business setup process take?",
+        "answer": "Timelines can range from a few days to several months depending on the business type, jurisdiction, and documentation requirements. With Stratigi360's streamlined processes and expert team, we significantly reduce setup times compared to managing the process independently."
+      },
+      {
+        "question": "What types of businesses can be set up in Dubai?",
+        "answer": "A wide range of business activities are eligible, including real estate, e-commerce, beauty and fitness, employment agencies, trading companies, cleaning services, technology firms, consulting businesses, and many more. We help identify the right license type for your specific activity."
+      },
+      {
+        "question": "How much does business setup in Dubai cost?",
+        "answer": "Costs vary depending on the business type, chosen jurisdiction (mainland vs free zone), number of visas required, and specific licensing requirements. Stratigi360 provides a transparent cost breakdown through our Cost Calculator tool — giving you a clear picture before you commit."
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact Us",
+    "heading": "Get in Touch With Our Experts",
+    "subheading": "Ready to start your business journey? Our team is here to guide you every step of the way.",
+    "phone_label": "Phone",
+    "email_label": "Email",
+    "address_label": "Address",
+    "address": "Dubai, United Arab Emirates",
+    "cta_primary": "Call Us Now",
+    "cta_secondary": "Send a Message",
+    "whatsapp_cta": "Chat on WhatsApp"
+  },
+  "footer": {
+    "description": "Tech-powered legal and tax solutions for startups and international businesses looking to establish or expand globally.",
+    "quick_links": {
+      "heading": "Quick Links",
+      "links": [
+        { "label": "Home", "href": "/" },
+        { "label": "About Us", "href": "/about" },
+        { "label": "Services", "href": "/services" },
+        { "label": "Contact Us", "href": "/contact" }
+      ]
+    },
+    "important_links": {
+      "heading": "Important Links",
+      "links": [
+        { "label": "Privacy Policy", "href": "/privacy-policy" },
+        { "label": "Terms and Conditions", "href": "/terms" },
+        { "label": "Payment Policy", "href": "/payment-policy" },
+        { "label": "News", "href": "/news" }
+      ]
+    }
+  },
+  "contactSite": {
+    "phone": "04 509 5911",
+    "whatsapp": "+971 4 509 5911",
+    "email": "info@stratigi360.com",
+    "socials": {
+      "facebook": "https://facebook.com/stratigi360",
+      "twitter": "https://twitter.com/stratigi360",
+      "instagram": "https://instagram.com/stratigi360",
+      "linkedin": "https://linkedin.com/company/stratigi360",
+      "youtube": "https://youtube.com/@stratigi360"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.contact.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+/* Central Card */
+.contact-form-container {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f1f1f1; /* Light grey card background */
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.contact-form__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+}
+
+/* Form Layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+/* Inputs & Textarea */
+.form-input, 
+.form-textarea {
+  width: 100%;
+  padding: 18px 20px;
+  background-color: #dcdcdc; /* Match the grey in your image */
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: #666;
+  font-weight: 500;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  background-color: #d0d0d0;
+}
+
+.form-textarea {
+  height: 150px;
+  resize: none;
+}
+
+/* Red Submit Button */
+.form-submit-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #e60000; /* Vibrant red from image */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit-btn:hover {
+  background-color: #cc0000;
+}
+
+.form-submit-btn span {
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-form-container {
+    padding: 30px 20px;
+  }
+  
+  .contact-form__title {
+    font-size: 1.4rem;
+  }
+}
