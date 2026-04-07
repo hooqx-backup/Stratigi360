@@ -53,4 +53,12 @@
     .heading { font-size: 1.4rem; }
     .subheading { font-size: 1.1rem; }
     .red-banner { padding: 30px 15px; }
+    .skyline-wrapper { height: 80px; }
+}
+
+@media (max-width: 480px) {
+    .heading { font-size: 1.2rem; }
+    .subheading { font-size: 1rem; }
+    .red-banner { padding: 24px 12px; }
+    .skyline-wrapper { height: 60px; }
 }

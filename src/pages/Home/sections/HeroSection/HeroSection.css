@@ -268,4 +268,7 @@
   .hero__headline      { font-size: 20px; }
   .hero__subheadline   { font-size: 19px; }
   .hero__badge { flex-wrap: wrap; justify-content: center; }
+  .hero__content { padding-top: 32px; padding-bottom: 48px; }
+  .hero__content .btn { padding: 13px 28px; font-size: 12px; }
+  .hero-nav__actions .btn { display: none; }
 }

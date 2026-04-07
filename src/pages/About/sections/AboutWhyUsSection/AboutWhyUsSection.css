@@ -64,9 +64,14 @@
 }
 
 @media (max-width: 900px) {
-  .ab-why__grid { grid-template-columns: repeat(2, 1fr); }
+  .ab-why__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
 }
 
 @media (max-width: 580px) {
   .ab-why__grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  .ab-why__header { margin-bottom: 32px; }
+}
+
+@media (max-width: 480px) {
+  .ab-why__grid { gap: 20px; }
 }

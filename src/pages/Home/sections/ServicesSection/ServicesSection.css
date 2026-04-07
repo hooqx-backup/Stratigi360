@@ -121,10 +121,21 @@
   }
 }
 
+@media (max-width: 768px) {
+  .services__heading { font-size: 1.6rem; }
+  .svc-card { padding: 28px 20px 22px; }
+}
+
 @media (max-width: 600px) {
   .services__grid {
     grid-template-columns: 1fr;
     max-width: 400px;
     margin: 0 auto;
   }
+}
+
+@media (max-width: 480px) {
+  .services__heading { font-size: 1.4rem; }
+  .svc-card__icon-wrap { width: 64px; height: 64px; }
+  .svc-card__icon-wrap i { font-size: 26px; }
 }

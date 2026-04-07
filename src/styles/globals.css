@@ -153,6 +153,7 @@ input, textarea, select {
     --font-3xl: 32px;
     --space-xl: 40px;
     --space-2xl: 60px;
+    --container-max: 100%;
   }
 }
 
@@ -160,5 +161,8 @@ input, textarea, select {
   :root {
     --font-2xl: 24px;
     --font-3xl: 28px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-md: 16px;
   }
 }

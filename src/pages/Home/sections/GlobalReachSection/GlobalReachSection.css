@@ -141,11 +141,21 @@
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
-  .global-reach__inner {
-    grid-template-columns: 1fr;
-  }
+  .global-reach__inner { grid-template-columns: 1fr; }
+  .global-reach__map   { padding: 32px 20px; }
+}
 
-  .global-reach__map {
-    padding: 32px 20px;
-  }
+@media (max-width: 768px) {
+  .global-reach { padding: 40px 0; }
+  .global-reach__panel-content { padding: 36px 28px; }
+  .global-reach__contact-heading { font-size: 1.5rem; }
+  .global-reach__social-heading  { font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  .global-reach { padding: 28px 0; }
+  .global-reach__panel-content { padding: 28px 20px; }
+  .global-reach__contact-heading { font-size: 1.3rem; }
+  .global-reach__socials { gap: 10px; }
+  .global-reach__socials a { width: 36px; height: 36px; font-size: 0.9rem; }
 }

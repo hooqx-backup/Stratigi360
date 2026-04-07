@@ -125,5 +125,9 @@
 @media (max-width: 480px) {
   .site-footer__grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
+
+  .site-footer__main { padding: 40px 0 32px; }
+  .site-footer__logo { font-size: 1.3rem; }
 }

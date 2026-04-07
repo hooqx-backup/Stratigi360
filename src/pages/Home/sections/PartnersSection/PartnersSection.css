@@ -66,13 +66,193 @@
   height: 72px;
   padding: 0 24px;
   /* filter: grayscale(1); */
-  /* opacity: 0.65; */
+  /* 
+  
+  
+  ...
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  0000000opacity: 0.65; */
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .partners__item:hover {
   filter: grayscale(0);
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .partners__track { gap: 40px; }
+  .partners__item  { height: 56px; padding: 0 16px; }
+  .partners__item img { max-height: 40px; }
+}
+
+@media (max-width: 480px) {
+  .partners__track { gap: 28px; }
+  .partners__item  { height: 48px; padding: 0 12px; }
 }
 
 /* Logo image (use when assets are ready) */

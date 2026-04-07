@@ -1,55 +1,54 @@
-import missionImg from '../../../../assets/images/Group-147-1.webp'
-import visionImg1  from '../../../../assets/images/Group-144.webp'
-import visionImg2  from '../../../../assets/images/Group-146-e1705781502877.webp'
+import missionImg from '../../../../assets/images/about/Rectangle-356.webp'
+import visionImg1  from '../../../../assets/images/about/Rectangle-352.webp'
+import valuesImg   from '../../../../assets/images/about/Rectangle-354.webp'
 import './MissionVisionSection.css'
 
 const MissionVisionSection = () => (
-  <section className="mv section section--light">
-    <div className="container mv__inner">
+  <section className="mv">
 
-      {/* Mission */}
-      <div className="mv__block">
-        <div className="mv__img-wrap">
-          <img src={missionImg} alt="Our Mission" className="mv__img" />
-        </div>
-        <div className="mv__text">
-          <h2 className="mv__heading">Our Mission</h2>
-          <div className="mv__line" />
-          <p className="mv__body">
-            Our mission is to empower startups, international businesses, and individuals with
-            comprehensive legal, tax, and digital solutions — delivering clarity and confidence at
-            every stage of their journey. We strive to make world-class business support accessible,
-            transparent, and results-driven.
-          </p>
-        </div>
-      </div>
-
-      {/* Vision */}
-      <div className="mv__block mv__block--reverse">
-        <div className="mv__text">
-          <h2 className="mv__heading">Our Vision</h2>
-          <div className="mv__line" />
-          <p className="mv__body">
-            To be the leading global platform for business setup and professional services —
-            recognized for integrity, innovation, and collaboration. We envision a world where every
-            entrepreneur and enterprise can navigate complex markets with ease and confidence.
-          </p>
-          <ul className="mv__values-list">
-            {['Integrity', 'Innovation', 'Collaboration'].map((v) => (
-              <li key={v}>
-                <i className="fa-solid fa-circle-check" />
-                {v}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="mv__img-pair">
-          <img src={visionImg1} alt="Vision" className="mv__img-pair-item" />
-          <img src={visionImg2} alt="Vision" className="mv__img-pair-item mv__img-pair-item--offset" />
-        </div>
-      </div>
-
+    {/* Row 1 — Mission text | Mission image */}
+    <div className="mv__cell mv__cell--dark">
+      <h2 className="mv__heading">Our Mission <span className="mv__title-line" /></h2>
+      <p className="mv__body">
+        We're here to empower startups, international businesses, and individuals alike.
+        Our mission is to offer comprehensive legal and tax solutions and enhance your
+        professional journey through effective and digital solutions.
+      </p>
     </div>
+
+    <div className="mv__cell mv__cell--img">
+      <img src={missionImg} alt="Our Mission" className="mv__img" />
+    </div>
+
+    {/* Row 2 — Vision image | Vision text */}
+    <div className="mv__cell mv__cell--img">
+      <img src={visionImg1} alt="Our Vision" className="mv__img" />
+    </div>
+
+    <div className="mv__cell mv__cell--dark">
+      <h2 className="mv__heading">Our Vision <span className="mv__title-line" /></h2>
+      <p className="mv__body">
+        Integrity, Innovation, Collaboration – We live by these values, ensuring the
+        highest standards of integrity, fostering innovation, and achieving success
+        through collaboration. Our vision is to be the leading global platform where
+        every entrepreneur can navigate complex markets with ease and confidence.
+      </p>
+    </div>
+
+    {/* Row 3 — Values text | Values image */}
+    <div className="mv__cell mv__cell--dark">
+      <h2 className="mv__heading">Our Values <span className="mv__title-line" /></h2>
+      <p className="mv__body">
+        Integrity, Innovation, Collaboration – these are the pillars we stand on. We believe
+        trust is earned through transparency and lasting success is built on meaningful
+        relationships with our clients and communities.
+      </p>
+    </div>
+
+    <div className="mv__cell mv__cell--img">
+      <img src={valuesImg} alt="Our Values" className="mv__img" />
+    </div>
+
   </section>
 )
 

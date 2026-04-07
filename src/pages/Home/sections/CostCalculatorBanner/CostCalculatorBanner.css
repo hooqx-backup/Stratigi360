@@ -51,8 +51,17 @@
   transform: translateY(-2px);
 }
 
+@media (max-width: 768px) {
+  .calc-banner__content { padding: 36px 20px; }
+}
+
 @media (max-width: 600px) {
-  .calc-banner__heading {
-    font-size: 1.2rem;
-  }
+  .calc-banner__heading { font-size: 1.2rem; }
+  .calc-banner { min-height: auto; }
+}
+
+@media (max-width: 480px) {
+  .calc-banner__content { padding: 28px 16px; }
+  .calc-banner__heading { font-size: 1.1rem; }
+  .calc-banner__btn { padding: 11px 24px; font-size: 0.8rem; }
 }

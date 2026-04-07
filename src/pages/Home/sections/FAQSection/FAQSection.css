@@ -85,16 +85,14 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
-  .faq-item__question {
-    padding: 20px;
-    font-size: 1rem;
-  }
-  
-  .faq-item__answer-inner {
-    padding: 0 20px 20px 20px;
-  }
-  
-  .faq__title {
-    font-size: 2rem;
-  }
+  .faq-item__question  { padding: 20px; font-size: 1rem; }
+  .faq-item__answer-inner { padding: 0 20px 20px 20px; }
+  .faq__title { font-size: 2rem; }
+  .faq__header { margin-bottom: 32px; }
+}
+
+@media (max-width: 480px) {
+  .faq__title { font-size: 1.6rem; }
+  .faq-item__question { padding: 16px; font-size: 0.95rem; }
+  .faq-item__answer-inner { padding: 0 16px 16px; }
 }
