@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import content from '../../locales/en.json'
+import logoImg from '../../assets/images/STRATIGI-PNG-white-1.png'
 import './Footer.css'
 
 const { site, footer } = content
@@ -13,7 +14,7 @@ const Footer = () => (
 
         {/* Col 1 — Brand */}
         <div className="footer__col footer__col--brand">
-          <div className="footer__logo-text">STRATIGI<span>.</span></div>
+          <img src={logoImg} alt="Stratigi360" className="footer__logo-img" />
           <p className="footer__desc">
             Stratigi360 is a tech-powered company designed to cater to both start ups and international businesses' legal &amp; tax necessities globally.
           </p>

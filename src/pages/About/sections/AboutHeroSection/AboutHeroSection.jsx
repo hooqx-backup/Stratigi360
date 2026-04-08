@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import content from '../../../../locales/en.json'
 import Button from '../../../../components/ui/Button/Button'
 import heroBg from '../../../../assets/images/about/Group-154.webp'
+import logoImg from '../../../../assets/images/STRATIGI-PNG-1.png'
 import './AboutHeroSection.css'
 
 const { nav } = content
@@ -25,8 +26,7 @@ const AboutHeroSection = () => {
         <div className="container about-hero-nav__inner">
 
           <Link to="/" className="about-hero-nav__logo" onClick={closeMenu}>
-            <span className="about-hero-nav__logo-text">STRATIGI</span>
-            <span className="about-hero-nav__logo-360">360</span>
+            <img src={logoImg} alt="Stratigi360" className="about-hero-nav__logo-img" />
           </Link>
 
           <ul className="about-hero-nav__links">

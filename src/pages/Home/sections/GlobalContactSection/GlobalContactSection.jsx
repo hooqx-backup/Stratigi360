@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import content from '../../../../locales/en.json'
+import logoImg from '../../../../assets/images/STRATIGI-PNG-white-1.png'
 import './GlobalContactSection.css'
 
 const { footer } = content
@@ -14,7 +15,7 @@ const GlobalContactSection = () => {
 
           {/* Col 1 — Brand */}
           <div className="site-footer__brand">
-            <div className="site-footer__logo">STRATIGI<span>.</span></div>
+            <img src={logoImg} alt="Stratigi360" className="site-footer__logo-img" />
             <p className="site-footer__desc">
               Stratigi360 is a tech-powered company designed to cater to both start ups and international businesses' legal &amp; tax necessities globally.
             </p>

@@ -115,22 +115,11 @@
   text-decoration: none;
 }
 
-.navbar__logo-stratigi {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--color-primary);
-  letter-spacing: 2px;
-  line-height: 1;
-}
-
-.navbar__logo-360 {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-accent);
-  letter-spacing: 1px;
-  line-height: 1;
-  align-self: flex-end;
-  margin-bottom: 2px;
+.navbar__logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 /* ── Nav Links ── */

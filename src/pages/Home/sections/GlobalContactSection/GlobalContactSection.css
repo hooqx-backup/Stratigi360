@@ -22,18 +22,11 @@
 }
 
 /* ---- Brand column ---- */
-.site-footer__logo {
-  font-size: 1.6rem;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #fff;
+.site-footer__logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
   margin-bottom: 20px;
-  line-height: 1;
-}
-
-.site-footer__logo span {
-  color: var(--color-accent);
 }
 
 .site-footer__desc {

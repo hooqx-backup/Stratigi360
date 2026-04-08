@@ -54,22 +54,10 @@
   text-decoration: none;
 }
 
-.hero-nav__logo-text {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--color-primary);
-  letter-spacing: 2px;
-  line-height: 1;
-}
-
-.hero-nav__logo-360 {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-accent);
-  letter-spacing: 1px;
-  line-height: 1;
-  align-self: flex-end;
-  margin-bottom: 2px;
+.hero-nav__logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Links */
@@ -264,7 +252,7 @@
 }
 
 @media (max-width: 480px) {
-  .hero-nav__logo-text { font-size: 18px; }
+  .hero-nav__logo-img { height: 34px; }
   .hero__headline      { font-size: 20px; }
   .hero__subheadline   { font-size: 19px; }
   .hero__badge { flex-wrap: wrap; justify-content: center; }

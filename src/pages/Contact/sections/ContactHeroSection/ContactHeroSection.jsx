@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import content from '../../../../locales/en.json'
 import Button from '../../../../components/ui/Button/Button'
-import heroBg from '../../../../assets/images/hero-bg.webp'
+import heroBg from '../../../../assets/images/contact/Group-193.webp'
 import logoImg from '../../../../assets/images/STRATIGI-PNG-1.png'
-import './ServicesHeroSection.css'
+import './ContactHeroSection.css'
 
-const { nav } = content
+const { nav, contact } = content
 
-const ServicesHeroSection = () => {
+const ContactHeroSection = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const closeMenu = () => setMenuOpen(false)
@@ -20,22 +20,22 @@ const ServicesHeroSection = () => {
   }, [])
 
   return (
-    <section className="svc-hero" style={{ backgroundImage: `url(${heroBg})` }}>
+    <section className="ct-hero" style={{ backgroundImage: `url(${heroBg})` }}>
 
-      <nav className={`svc-hero-nav ${scrolled ? 'svc-hero-nav--scrolled' : ''}`}>
-        <div className="container svc-hero-nav__inner">
+      <nav className={`ct-hero-nav ${scrolled ? 'ct-hero-nav--scrolled' : ''}`}>
+        <div className="container ct-hero-nav__inner">
 
-          <Link to="/" className="svc-hero-nav__logo" onClick={closeMenu}>
-            <img src={logoImg} alt="Stratigi360" className="svc-hero-nav__logo-img" />
+          <Link to="/" className="ct-hero-nav__logo" onClick={closeMenu}>
+            <img src={logoImg} alt="Stratigi360" className="ct-hero-nav__logo-img" />
           </Link>
 
-          <ul className="svc-hero-nav__links">
+          <ul className="ct-hero-nav__links">
             {nav.links.map((link) => (
               <li key={link.label}>
                 <NavLink
                   to={link.href}
                   className={({ isActive }) =>
-                    `svc-hero-nav__link ${isActive ? 'svc-hero-nav__link--active' : ''}`
+                    `ct-hero-nav__link ${isActive ? 'ct-hero-nav__link--active' : ''}`
                   }
                   onClick={closeMenu}
                 >
@@ -45,12 +45,12 @@ const ServicesHeroSection = () => {
             ))}
           </ul>
 
-          <div className="svc-hero-nav__actions">
+          <div className="ct-hero-nav__actions">
             <Button variant="primary" size="md" href="/calculator">
               {nav.cta}
             </Button>
             <button
-              className={`svc-hero-hamburger ${menuOpen ? 'svc-hero-hamburger--open' : ''}`}
+              className={`ct-hero-hamburger ${menuOpen ? 'ct-hero-hamburger--open' : ''}`}
               onClick={() => setMenuOpen((v) => !v)}
               aria-label="Toggle menu"
             >
@@ -61,14 +61,14 @@ const ServicesHeroSection = () => {
         </div>
 
         {menuOpen && (
-          <div className="svc-hero-mobile-menu">
+          <div className="ct-hero-mobile-menu">
             <ul>
               {nav.links.map((link) => (
                 <li key={link.label}>
                   <NavLink
                     to={link.href}
                     className={({ isActive }) =>
-                      `svc-hero-nav__link ${isActive ? 'svc-hero-nav__link--active' : ''}`
+                      `ct-hero-nav__link ${isActive ? 'ct-hero-nav__link--active' : ''}`
                     }
                     onClick={closeMenu}
                   >
@@ -86,16 +86,14 @@ const ServicesHeroSection = () => {
         )}
       </nav>
 
-      <div className="container svc-hero__content">
-        <h1 className="svc-hero__heading">SERVICES</h1>
-        <p className="svc-hero__sub">
-          Comprehensive solutions for every stage of your business journey in Dubai and beyond.
-        </p>
-        <div className="svc-hero__divider" />
+      <div className="container ct-hero__content">
+        <h1 className="ct-hero__heading">{contact.hero.heading}</h1>
+        <p className="ct-hero__sub">{contact.hero.sub}</p>
+        <div className="ct-hero__divider" />
       </div>
 
     </section>
   )
 }
 
-export default ServicesHeroSection
+export default ContactHeroSection

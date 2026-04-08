@@ -73,50 +73,60 @@
     "heading": "Comprehensive Solutions for Every Business Need",
     "subheading": "From strategy to execution, we cover all aspects of your business journey.",
     "cta": "Know More",
+    "tabs": ["All", "Consultation", "Business Setup", "Digital & Marketing"],
     "items": [
       {
         "icon": "fa-lightbulb",
         "title": "Business Consultation",
+        "category": "Consultation",
         "description": "Our consultation experts provide tailored solutions to optimize your business strategies and propel growth. Trust us to be your partner in success, offering insightful guidance for a thriving venture."
       },
       {
         "icon": "fa-scale-balanced",
         "title": "Legal & Tax Consultation",
+        "category": "Consultation",
         "description": "Stratigi360 encompasses leading legal and tax consultants with a highly dynamic workforce that offer precise guidance to ensure compliance and optimize your financial strategies."
       },
       {
         "icon": "fa-building",
         "title": "Business Setup",
+        "category": "Business Setup",
         "description": "Easily set up your business with vital Stratigi360 guidance, as we specialize in seamless business setup solutions, consulting you through the intricacies of establishing and expanding your venture."
       },
       {
         "icon": "fa-palette",
         "title": "Collateral Building",
+        "category": "Business Setup",
         "description": "As one of the industry-leading business setup service providers in Dubai, we help you build compelling collateral that elevates your brand presence and drives business credibility."
       },
       {
         "icon": "fa-gears",
         "title": "Operations Consultation",
+        "category": "Consultation",
         "description": "We specialize in the development of business processes and operations, providing expert operational guidance to streamline efficiency and maximize productivity across your organization."
       },
       {
         "icon": "fa-bullhorn",
         "title": "Marketing Management",
+        "category": "Digital & Marketing",
         "description": "We have a team of experienced marketing professionals who create data-driven strategies to strengthen your brand, expand your reach, and drive sustainable business growth."
       },
       {
         "icon": "fa-laptop-code",
         "title": "Digital Solutions",
+        "category": "Digital & Marketing",
         "description": "From web development to digital transformation, we deliver cutting-edge technology solutions tailored to modernize your business operations and accelerate your digital growth."
       },
       {
         "icon": "fa-headset",
         "title": "Virtual Assistance (BPO/KPO)",
+        "category": "Digital & Marketing",
         "description": "Our virtual assistance services cover a wide range of business and knowledge process outsourcing needs, giving your organization expert support without the overhead."
       },
       {
         "icon": "fa-chart-line",
         "title": "Investment & Financial Consultation",
+        "category": "Consultation",
         "description": "We provide strategic financial consultation and investment guidance to help you make sound decisions, secure funding, and position your business for long-term financial success."
       }
     ]
@@ -196,13 +206,27 @@
     "label": "Contact Us",
     "heading": "Get in Touch With Our Experts",
     "subheading": "Ready to start your business journey? Our team is here to guide you every step of the way.",
-    "phone_label": "Phone",
-    "email_label": "Email",
-    "address_label": "Address",
-    "address": "Dubai, United Arab Emirates",
     "cta_primary": "Call Us Now",
     "cta_secondary": "Send a Message",
-    "whatsapp_cta": "Chat on WhatsApp"
+    "whatsapp_cta": "Chat on WhatsApp",
+    "hero": {
+      "heading": "CONTACT US",
+      "sub": "Look no further for a reliable partner in business setup. We're here to guide you with trust and expert advice."
+    },
+    "form": {
+      "heading": "Send Message",
+      "sub": "If you're seeking a trustworthy partner to help set up your business and provide the best advice, we're here for you.",
+      "button": "Send"
+    },
+    "info": {
+      "phone": { "label": "Phone", "value": "04 509 5911", "value2": "+971 4 509 5911" },
+      "email": { "label": "Email", "value": "info@stratigi360.com" },
+      "address": { "label": "Address", "value": "107 Al Ahli House C, Al Nahda, Dubai, United Arab Emirates" }
+    },
+    "map": {
+      "heading": "Find Us",
+      "sub": "Locate us effortlessly on Google Maps for easy navigation to our place. Your journey to us starts here!"
+    }
   },
   "footer": {
     "description": "Tech-powered legal and tax solutions for startups and international businesses looking to establish or expand globally.",

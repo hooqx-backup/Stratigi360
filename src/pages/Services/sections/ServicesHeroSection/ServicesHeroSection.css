@@ -87,22 +87,10 @@
   flex-shrink: 0;
 }
 
-.svc-hero-nav__logo-text {
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 2px;
-}
-
-.svc-hero-nav--scrolled .svc-hero-nav__logo-text { color: var(--color-primary); }
-
-.svc-hero-nav__logo-360 {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-accent);
-  letter-spacing: 1px;
-  align-self: flex-end;
-  margin-bottom: 2px;
+.svc-hero-nav__logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
 }
 
 .svc-hero-nav__links {

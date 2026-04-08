@@ -3,9 +3,10 @@ import { Link, NavLink } from 'react-router-dom'
 import content from '../../../../locales/en.json'
 import Button from '../../../../components/ui/Button/Button'
 import heroBg from '../../../../assets/images/hero-bg.webp'
+import logoImg from '../../../../assets/images/STRATIGI-PNG-1.png'
 import './HeroSection.css'
 
-const { site, nav, hero } = content
+const { nav, hero } = content
 
 const HeroSection = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -28,8 +29,7 @@ const HeroSection = () => {
         <div className="container hero-nav__inner">
 
           <Link to="/" className="hero-nav__logo" onClick={closeMenu}>
-            <span className="hero-nav__logo-text">STRATIGI</span>
-            <span className="hero-nav__logo-360">360</span>
+            <img src={logoImg} alt="Stratigi360" className="hero-nav__logo-img" />
           </Link>
 
           <ul className="hero-nav__links">
