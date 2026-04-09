@@ -1,79 +1,147 @@
 /* ---- Layout ---- */
 .process__inner {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 64px;
+  grid-template-columns: 1fr 480px;
+  gap: 80px;
   align-items: flex-start;
 }
 
-/* ---- Left column ---- */
+/* ---- Left Column: Heading ---- */
 .process__heading {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--color-primary);
-  text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  line-height: 1.2;
 }
 
 .process__heading-line {
   width: 60px;
-  height: 3px;
-  background-color: var(--color-accent);
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
   border-radius: 2px;
-  margin: 0 auto 36px;
+  margin-bottom: 48px;
 }
 
+/* ---- Steps Container (with connecting line) ---- */
 .process__steps {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 36px;
+  position: relative;
 }
 
-/* ---- Single step ---- */
+/* Scroll-driven animated connecting line */
+.process__line {
+  position: absolute;
+  top: 28px;
+  bottom: 28px;
+  left: 27px; /* Centers the 2px line behind the 56px circle */
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent) 0%,
+    rgba(221, 51, 51, 0.4) 70%,
+    transparent 100%
+  );
+  transform-origin: top center;
+  z-index: 1;
+}
+
+/* ---- Single Step ---- */
 .process__step {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+  cursor: default;
+  padding: 16px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Premium hover background */
+.process__step:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* Step Number Badge */
 .process__step-num {
+  position: relative;
   flex-shrink: 0;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
-  background-color: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent), #b32424);
   color: #fff;
-  font-size: 1.1rem;
-  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 6px 16px rgba(221, 51, 51, 0.3);
+  z-index: 2;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.process__step-num-text {
+  font-size: 1.2rem;
+  font-weight: 800;
+  z-index: 2;
+}
+
+/* Subtle glow behind number */
+.process__step-num-glow {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.process__step:hover .process__step-num {
+  transform: scale(1.1);
+}
+.process__step:hover .process__step-num-glow {
+  opacity: 0.6;
+}
+
+/* Step Content */
 .process__step-content {
   flex: 1;
+  padding-top: 4px; /* Align text with the center of the circle */
 }
 
 .process__step-title {
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--color-primary);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   line-height: 1.3;
 }
 
 .process__step-desc {
-  font-size: var(--font-sm);
+  font-size: var(--font-base);
   color: var(--color-text-light);
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
-/* ---- Right column: image ---- */
+/* ---- Right Column: Sticky Image ---- */
 .process__image-wrap {
   position: sticky;
-  top: 100px;
-  border-radius: var(--radius-md);
+  top: 120px; /* Gives it breathing room from the header */
+}
+
+.process__image-inner {
+  position: relative;
+  border-radius: var(--radius-md, 16px);
   overflow: hidden;
+  aspect-ratio: 4 / 5; /* Creates a nice vertical poster look */
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
+  transform: translateZ(0); /* Hardware acceleration */
 }
 
 .process__img {
@@ -81,32 +149,65 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Subtle cinematic zoom on hover */
+.process__image-inner:hover .process__img {
+  transform: scale(1.05);
+}
+
+/* Adds depth to the image */
+.process__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.15) 0%, transparent 40%);
+  pointer-events: none;
 }
 
 /* ---- Responsive ---- */
 @media (max-width: 1024px) {
   .process__inner {
-    grid-template-columns: 1fr 340px;
-    gap: 40px;
+    grid-template-columns: 1fr 380px;
+    gap: 48px;
   }
 }
 
 @media (max-width: 768px) {
   .process__inner {
     grid-template-columns: 1fr;
+    gap: 64px;
   }
 
   .process__image-wrap {
     position: static;
-    max-width: 480px;
+    max-width: 500px;
     margin: 0 auto;
-    width: 100%;
+  }
+  
+  .process__image-inner {
+    aspect-ratio: 16 / 9; /* Switch to horizontal on mobile */
   }
 
-  .process__heading { font-size: 1.6rem; }
+  .process__heading { font-size: 1.8rem; text-align: center; }
+  .process__heading-line { margin: 0 auto 36px; }
 }
 
 @media (max-width: 480px) {
-  .process__heading { font-size: 1.4rem; }
-  .process__step-num { width: 40px; height: 40px; font-size: 0.95rem; }
+  .process__heading { font-size: 1.5rem; }
+  .process__line { left: 23px; } /* Adjust line for smaller circle */
+  
+  .process__step {
+    padding: 0; /* Remove padding on mobile to save space */
+  }
+  .process__step:hover {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  
+  .process__step-num { 
+    width: 48px; 
+    height: 48px; 
+    font-size: 1rem; 
+  }
 }

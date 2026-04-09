@@ -1,33 +1,217 @@
+:root {
+  /* Ensure these variables exist in your global CSS, or fallback to red/white */
+  --stt-color: var(--color-accent, #dd3333);
+  --stt-color-hover: var(--color-accent-dark, #b32424);
+  --stt-text: var(--color-white, #ffffff);
+}
+
+/* 1. Entrance Animation */
+@keyframes slideInUpRight {
+  from {
+    opacity: 0;
+    transform: translate(40px, 40px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* 2. Ambient Glow */
+@keyframes premiumGlow {
+  0%,
+  100% {
+    box-shadow: 0 10px 24px rgba(221, 51, 51, 0.3), 0 0 0 0 rgba(221, 51, 51, 0.28);
+  }
+  50% {
+    box-shadow: 0 14px 30px rgba(221, 51, 51, 0.45), 0 0 0 8px rgba(221, 51, 51, 0);
+  }
+}
+
+/* 3. Premium Sheen Sweep */
+@keyframes sheenSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-160%) skewX(-24deg);
+  }
+  22% {
+    opacity: 0.45;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(180%) skewX(-24deg);
+  }
+}
+
+/* 4. Subtle Icon Breathing */
+@keyframes iconBreathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-1px) scale(1.06);
+  }
+}
+
 .scroll-to-top {
   position: fixed;
-  bottom: 90px;
+  bottom: calc(88px + env(safe-area-inset-bottom, 0px));
   right: 24px;
-  width: 44px;
-  height: 44px;
-  background-color: var(--color-accent);
-  color: var(--color-white);
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(150deg, #ea4a4a 0%, var(--stt-color) 45%, #b82121 100%);
+  color: var(--stt-text);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
-  box-shadow: var(--shadow-md);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: opacity var(--transition), visibility var(--transition),
-    transform var(--transition), background-color var(--transition);
-  z-index: 999;
+  font-size: 16px;
+  box-shadow: 0 10px 24px rgba(221, 51, 51, 0.3);
   cursor: pointer;
   border: none;
+  padding: 0;
+  outline: none;
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 999;
+  
+  animation:
+    slideInUpRight 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+    premiumGlow 3.2s ease-in-out infinite 0.7s;
+    
+  transition: box-shadow 0.3s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s;
 }
 
-.scroll-to-top--visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.scroll-to-top::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3), transparent 46%);
+  pointer-events: none;
+  z-index: 1;
 }
 
+.scroll-to-top::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -45%;
+  width: 44%;
+  height: 170%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.45), transparent);
+  pointer-events: none;
+  z-index: 2;
+  animation: sheenSweep 3.8s ease-in-out infinite 1s;
+}
+
+/* 5. Hover Expansion & Shadow */
 .scroll-to-top:hover {
-  background-color: var(--color-accent-dark);
+  background: linear-gradient(150deg, #f25757 0%, var(--stt-color-hover) 45%, #ab1e1e 100%);
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 0 12px 32px rgba(221, 51, 51, 0.5);
+  filter: saturate(1.08);
+}
+
+/* 6. Tactile Click/Press State */
+.scroll-to-top:active {
+  transform: scale(0.92);
+  box-shadow: 0 4px 12px rgba(221, 51, 51, 0.3);
+  transition-duration: 0.1s; /* Quick snap down */
+}
+
+/* --- SVG Progress Ring --- */
+.scroll-to-top__progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg); /* Start circle at 12 o'clock */
+  pointer-events: none; /* Don't interfere with clicks */
+  z-index: 3;
+}
+
+.scroll-to-top__progress-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 2.5px;
+}
+
+.scroll-to-top__progress-bar {
+  fill: none;
+  stroke: var(--stt-text);
+  stroke-width: 2.5px;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.15s ease-out; /* Smoothly tracks scroll */
+}
+
+/* --- Icon & Rotation --- */
+.scroll-to-top__rotate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transition: none;
+}
+
+.scroll-to-top__rotate--down {
+  transform: rotate(180deg);
+}
+
+.scroll-to-top__rotate--up {
+  /* Use 360deg instead of 0deg so it completes a full fluid spin when turning back */
+  transform: rotate(360deg); 
+}
+
+.scroll-to-top__icon {
+  display: block;
+  animation: iconBreathe 2.6s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+/* Provide a slight visual nudge to the arrow icon when hovered */
+.scroll-to-top:hover .scroll-to-top__rotate--up .scroll-to-top__icon {
+  transform: translateY(-2px);
+}
+.scroll-to-top:hover .scroll-to-top__rotate--down .scroll-to-top__icon {
+  transform: translateY(-2px); /* Translates down visually because container is inverted 180deg */
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 44px;
+    height: 44px;
+    bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+    right: 16px;
+  }
+
+  .scroll-to-top__progress {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top {
+    animation: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .scroll-to-top::after,
+  .scroll-to-top__icon {
+    animation: none;
+  }
+
+  .scroll-to-top:hover,
+  .scroll-to-top:active,
+  .scroll-to-top__rotate,
+  .scroll-to-top__icon {
+    transform: none;
+    transition: none;
+  }
 }

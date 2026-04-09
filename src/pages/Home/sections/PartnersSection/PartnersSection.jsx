@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion'
 import './PartnersSection.css'
+import { fadeUp, viewportOnce } from '../../../../utils/motionVariants'
 
 import vegaventures from '../../../../assets/images/carosuleimage/vegaventures-logo-1-690895649bfa6.webp'
 import zLogo       from '../../../../assets/images/carosuleimage/z-1.png'
@@ -22,16 +24,21 @@ const logos = [
   { src: tezz,         alt: 'Tezz' },
 ]
 
-// Duplicate for seamless infinite scroll
 const track = [...logos, ...logos]
 
 const PartnersSection = () => (
   <section className="partners section">
     <div className="container">
-      <div className="partners__header">
+      <motion.div
+        className="partners__header"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <h2 className="partners__heading">Our Partners</h2>
         <div className="partners__heading-line" />
-      </div>
+      </motion.div>
     </div>
 
     <div className="partners__track-wrap">
