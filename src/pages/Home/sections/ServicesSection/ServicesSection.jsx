@@ -1,10 +1,12 @@
+import { motion } from 'framer-motion'
 import content from '../../../../locales/en.json'
 import './ServicesSection.css'
+import { fadeUp, scaleIn, staggerContainer, viewportOnce } from '../../../../utils/motionVariants'
 
 const { services } = content
 
 const ServiceCard = ({ icon, title, description }) => (
-  <div className="svc-card">
+  <motion.div className="svc-card" variants={scaleIn}>
     <div className="svc-card__icon-wrap">
       <i className={`fa-solid ${icon}`} />
     </div>
@@ -13,21 +15,34 @@ const ServiceCard = ({ icon, title, description }) => (
     <a href="/services" className="svc-card__link">
       {services.cta} <i className="fa-solid fa-arrow-right" />
     </a>
-  </div>
+  </motion.div>
 )
 
 const ServicesSection = () => (
   <section className="services section section--light">
     <div className="container">
-      <div className="services__header">
+      <motion.div
+        className="services__header"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         <h2 className="services__heading">{services.heading}</h2>
         <div className="services__heading-line" />
-      </div>
-      <div className="services__grid">
+      </motion.div>
+
+      <motion.div
+        className="services__grid"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         {services.items.map((svc) => (
           <ServiceCard key={svc.title} {...svc} />
         ))}
-      </div>
+      </motion.div>
     </div>
   </section>
 )

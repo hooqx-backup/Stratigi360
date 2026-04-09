@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import content from '../../../../locales/en.json'
 import Button from '../../../../components/ui/Button/Button'
 import heroBg from '../../../../assets/images/hero-bg.webp'
 import logoImg from '../../../../assets/images/STRATIGI-PNG-1.png'
 import './HeroSection.css'
+import { fadeDown, fadeUp, staggerContainer, viewportOnce } from '../../../../utils/motionVariants'
 
 const { nav, hero } = content
 
@@ -90,9 +92,13 @@ const HeroSection = () => {
       </nav>
 
       {/* ── Hero Content ── */}
-      <div className="container hero__content">
-
-        <div className="hero__badge">
+      <motion.div
+        className="container hero__content"
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+      >
+        <motion.div className="hero__badge" variants={fadeDown}>
           <div className="hero__badge-stars">
             {[1,2,3,4,5].map((s) => <i key={s} className="fa-solid fa-star" />)}
           </div>
@@ -107,19 +113,23 @@ const HeroSection = () => {
               <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
             </svg>
           </span>
-        </div>
+        </motion.div>
 
-        <h2 className="hero__headline">
+        <motion.h2 className="hero__headline" variants={fadeUp}>
           Want a swift and effective business <strong>setup?</strong>
-        </h2>
+        </motion.h2>
 
-        <h1 className="hero__subheadline">{hero.subheadline}</h1>
+        <motion.h1 className="hero__subheadline" variants={fadeUp}>
+          {hero.subheadline}
+        </motion.h1>
 
-        <Button variant="primary" size="lg" href="/calculator">
-          {hero.cta}
-        </Button>
+        <motion.div variants={fadeUp}>
+          <Button variant="primary" size="lg" href="/calculator">
+            {hero.cta}
+          </Button>
+        </motion.div>
 
-      </div>
+      </motion.div>
     </section>
   )
 }

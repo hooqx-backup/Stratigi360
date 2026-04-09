@@ -1,22 +1,30 @@
+import { motion } from 'framer-motion'
 import content from '../../../../locales/en.json'
 import mapAndBg from '../../../../assets/images/image-2.webp'
 import './GlobalReachSection.css'
+import { fadeLeft, fadeRight, fadeUp, staggerContainer, viewportOnce } from '../../../../utils/motionVariants'
 
 const { contactSite } = content
 
 const GlobalReachSection = () => (
   <section className="global-reach">
-    <div className="global-reach__inner">
-
+    <motion.div
+      className="global-reach__inner"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
+    >
       {/* Left — World Map Image */}
-      <div className="global-reach__map">
+      <motion.div className="global-reach__map" variants={fadeLeft}>
         <img src={mapAndBg} alt="Global Reach Map" className="global-reach__map-img" />
-      </div>
+      </motion.div>
 
       {/* Right — Contact Panel */}
-      <div
+      <motion.div
         className="global-reach__panel"
         style={{ backgroundImage: `url(${mapAndBg})` }}
+        variants={fadeRight}
       >
         <div className="global-reach__panel-overlay" />
         <div className="global-reach__panel-content">
@@ -59,9 +67,9 @@ const GlobalReachSection = () => (
           </div>
 
         </div>
-      </div>
+      </motion.div>
 
-    </div>
+    </motion.div>
   </section>
 )
 
