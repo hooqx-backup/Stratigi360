@@ -6,7 +6,7 @@ const BusinessDestiny = () => {
   // Content as JSON
   const content = {
     heading: "Master Your Business Destiny with Stratigi360's Expertise.",
-    subHeading: "Get the worry-free services and consistent and support you need to set up your business",
+    subHeading: "Get the real services and constant and support you need to set up your business",
     skylineImage: "https://i.imgur.com/your-skyline-placeholder.png" // Replace with your local asset
   };
 
