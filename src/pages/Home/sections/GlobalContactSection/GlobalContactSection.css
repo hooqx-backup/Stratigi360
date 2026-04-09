@@ -1,0 +1,126 @@
+/* ===== Footer ===== */
+.site-footer {
+  background-color: #1e2535;
+  background-image: url('../../../../assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  color: #fff;
+}
+
+/* ---- Main grid ---- */
+.site-footer__main {
+  padding: 60px 0 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ---- Brand column ---- */
+.site-footer__logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.site-footer__desc {
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 28px;
+  max-width: 340px;
+}
+
+.site-footer__scroll-top {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.site-footer__scroll-top:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+}
+
+/* ---- Link columns ---- */
+.site-footer__col-heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  letter-spacing: 0.3px;
+}
+
+.site-footer__col-heading--accent {
+  color: var(--color-accent);
+}
+
+.site-footer__links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.site-footer__links a {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-footer__links a:hover {
+  color: #fff;
+}
+
+/* ---- Bottom bar ---- */
+.site-footer__bottom {
+  text-align: center;
+  padding: 18px 24px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.site-footer__bottom p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .site-footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .site-footer__main { padding: 40px 0 32px; }
+  .site-footer__logo { font-size: 1.3rem; }
+}

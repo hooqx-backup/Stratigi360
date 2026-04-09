@@ -1,0 +1,168 @@
+/* ============================================================
+   GLOBAL CSS – Stratigi360
+   ============================================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  --color-primary:    #252b3b;
+  --color-accent:     #dd3333;
+  --color-accent-dark:#cf2e2e;
+  --color-white:      #ffffff;
+  --color-bg-light:   #f8f9fa;
+  --color-bg-section: #f2f4f7;
+  --color-text:       #252b3b;
+  --color-text-light: #666666;
+  --color-text-muted: #999999;
+  --color-border:     #e0e0e0;
+  --color-border-light: #cccccc;
+
+  --font-family:      'Poppins', sans-serif;
+
+  --font-xs:   12px;
+  --font-sm:   13px;
+  --font-base: 15px;
+  --font-md:   18px;
+  --font-lg:   22px;
+  --font-xl:   28px;
+  --font-2xl:  36px;
+  --font-3xl:  42px;
+
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  60px;
+  --space-2xl: 80px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.16);
+
+  --transition: 0.3s ease;
+  --container-max: 1200px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-base);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Remove any Vite default restrictions */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  text-align: left;
+  display: block;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-family);
+}
+
+input, textarea, select {
+  font-family: var(--font-family);
+}
+
+/* ---------- Container ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* ---------- Section base ---------- */
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section--light {
+  background-color: var(--color-bg-light);
+}
+
+.section--dark {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ---------- Image placeholder ---------- */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #dee2e9 0%, #c8cdd8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8a93a8;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  text-align: center;
+  min-height: 200px;
+}
+
+/* ---------- Responsive helpers ---------- */
+@media (max-width: 1024px) {
+  :root { --container-max: 960px; }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-2xl: 28px;
+    --font-3xl: 32px;
+    --space-xl: 40px;
+    --space-2xl: 60px;
+    --container-max: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-2xl: 24px;
+    --font-3xl: 28px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-md: 16px;
+  }
+}

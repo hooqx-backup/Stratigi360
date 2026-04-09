@@ -1,0 +1,64 @@
+.destiny-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skyline-wrapper {
+    width: 100%;
+    height: 120px; /* Adjust based on your image height */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    background-color: #f8f9fa; /* Light grey background for the skyline area */
+}
+
+.skyline-img {
+    width: 100%;
+    max-width: 1200px;
+    object-fit: contain;
+    opacity: 0.8;
+}
+
+.red-banner {
+    width: 100%;
+    background-color: #c40000; /* Matching the deep red in your image */
+    padding: 40px 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.text-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.subheading {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .heading { font-size: 1.4rem; }
+    .subheading { font-size: 1.1rem; }
+    .red-banner { padding: 30px 15px; }
+    .skyline-wrapper { height: 80px; }
+}
+
+@media (max-width: 480px) {
+    .heading { font-size: 1.2rem; }
+    .subheading { font-size: 1rem; }
+    .red-banner { padding: 24px 12px; }
+    .skyline-wrapper { height: 60px; }
+}

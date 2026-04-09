@@ -1,0 +1,98 @@
+/* ---- Header Section ---- */
+.faq__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.faq__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.faq__underline {
+  width: 50px;
+  height: 2px;
+  background-color: #666;
+  margin: 0 auto;
+}
+
+/* ---- FAQ List ---- */
+.faq__list {
+  max-width: 900px; /* Centered container width */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ---- FAQ Item Card ---- */
+.faq-item {
+  background-color: #232933; /* Dark background from image */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item__question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 35px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.faq-item__icon {
+  font-size: 26px;
+  color: #ff3333; /* Red color for arrows */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* ---- Answer Area ---- */
+.faq-item__answer-wrap {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-item--open .faq-item__answer-wrap {
+  max-height: 500px; /* Adjust based on content length */
+}
+
+.faq-item__answer-inner {
+  padding: 0 35px 35px 70px; /* Indented padding for the answer text */
+}
+
+.faq-item__answer {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .faq-item__question  { padding: 20px; font-size: 1rem; }
+  .faq-item__answer-inner { padding: 0 20px 20px 20px; }
+  .faq__title { font-size: 2rem; }
+  .faq__header { margin-bottom: 32px; }
+}
+
+@media (max-width: 480px) {
+  .faq__title { font-size: 1.6rem; }
+  .faq-item__question { padding: 16px; font-size: 0.95rem; }
+  .faq-item__answer-inner { padding: 0 16px 16px; }
+}

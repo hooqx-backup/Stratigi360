@@ -1,0 +1,103 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition), color var(--transition),
+    border-color var(--transition), box-shadow var(--transition),
+    transform var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ---- Variants ---- */
+.btn--primary {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border: 2px solid var(--color-accent);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  box-shadow: 0 4px 16px rgba(221, 51, 51, 0.35);
+}
+
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn--dark {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+}
+
+.btn--dark:hover {
+  background-color: #1a1f2e;
+  border-color: #1a1f2e;
+}
+
+.btn--white {
+  background-color: var(--color-white);
+  color: var(--color-accent);
+  border: 2px solid var(--color-white);
+}
+
+.btn--white:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  border-color: var(--color-accent);
+}
+
+.btn--link {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: none;
+  padding: 0;
+  text-transform: none;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.btn--link:hover {
+  color: var(--color-accent-dark);
+  transform: none;
+}
+
+/* ---- Sizes ---- */
+.btn--sm {
+  font-size: 11px;
+  padding: 8px 18px;
+}
+
+.btn--md {
+  font-size: 13px;
+  padding: 12px 28px;
+}
+
+.btn--lg {
+  font-size: 14px;
+  padding: 16px 40px;
+}

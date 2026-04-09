@@ -1,0 +1,22 @@
+.about-banner {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 16px;
+}
+
+.about-banner__img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .about-banner { padding: 28px 16px; }
+}
+
+@media (max-width: 480px) {
+  .about-banner { padding: 20px 12px; }
+}

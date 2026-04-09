@@ -1,0 +1,29 @@
+.services-wheel-section {
+  width: 100%;
+  min-height: 500px;
+  background-color: #fff;
+}
+
+.services-wheel-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services-wheel-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .services-wheel-section { min-height: auto; }
+  .services-wheel-container { padding: 36px 16px; }
+}
+
+@media (max-width: 480px) {
+  .services-wheel-container { padding: 24px 12px; }
+}
