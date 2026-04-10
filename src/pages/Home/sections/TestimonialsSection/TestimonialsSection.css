@@ -1,118 +1,248 @@
-/* ---- Layout Header ---- */
-.testimonials__header {
-  text-align: center;
-  margin-bottom: 50px;
-}
+/* ==============================
+   Testimonials Section
+   ============================== */
 
-.testimonials__title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 10px;
-}
-
-.testimonials__underline {
-  width: 60px;
-  height: 2px;
-  background-color: #666;
-  margin: 0 auto;
-}
-
-/* ---- Grid ---- */
-.testimonials__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding-bottom: 40px;
-}
-
-/* ---- Card ---- */
-.testimonial-card {
-  background-color: #fff;
-  padding: 40px 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers everything horizontally */
-  text-align: center;   /* Centers the text */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-}
-
-/* Avatar Styling */
-.testimonial-card__avatar {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
+.ts {
+  position: relative;
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: var(--color-bg-light);
+}
+
+/* Large decorative background quote */
+.ts__bg-deco {
+  position: absolute;
+  top: -40px;
+  right: -30px;
+  font-size: 380px;
+  color: rgba(37, 43, 59, 0.03);
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* ── Carousel layout ── */
+.ts__carousel {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  border: 2px solid #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  gap: 32px;
+  margin-top: 56px;
 }
 
-.testimonial-card__avatar img {
+.ts__content {
+  flex: 1;
+  max-width: 740px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.ts__content--in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ts__content--out {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+/* ── Quote mark ── */
+.ts__quote-mark {
+  font-size: 42px;
+  color: var(--color-accent);
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+/* ── Stars ── */
+.ts-stars {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.ts-star--filled {
+  color: #fbbf24;
+  font-size: 15px;
+}
+
+.ts-star--empty {
+  color: rgba(255, 255, 255, 0.18);
+  font-size: 15px;
+}
+
+/* ── Review text ── */
+.ts__review {
+  font-size: 1.12rem;
+  font-style: italic;
+  color: var(--color-text-light);
+  line-height: 1.95;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+/* ── Author row ── */
+.ts__author {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-top: 32px;
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+  justify-content: center;
+}
+
+/* Avatar with accent ring */
+.ts__avatar {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--color-bg-section);
+  border: 2px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px rgba(221, 51, 51, 0.12);
+}
+
+.ts__avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Name Styling */
-.testimonial-card__name {
-  font-size: 1.1rem;
+.ts__avatar-initial {
+  font-size: 1.5rem;
   font-weight: 700;
-  color: #000;
-  margin-bottom: 10px;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  line-height: 1;
 }
 
-/* Stars Styling */
-.stars {
-  display: flex;
-  gap: 5px;
-  margin-bottom: 20px;
-  justify-content: center;
+.ts__author-text {
+  text-align: left;
 }
 
-.stars i {
+.ts__name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.ts__role {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+/* ── Arrow buttons ── */
+.ts__arrow {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text-light);
   font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.22s ease, background 0.22s ease, color 0.22s ease;
 }
 
-.stars__star--filled {
-  color: #ffcc00; /* Bright gold for the stars */
+.ts__arrow:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-white);
 }
 
-.stars__star--empty {
-  color: #e0e0e0;
+/* ── Dot indicators ── */
+.ts__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
 }
 
-/* Review Text */
-.testimonial-card__review {
-  font-size: 0.95rem;
-  color: #444;
-  line-height: 1.6;
-  margin: 0;
+.ts__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--color-border);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.3s ease, background 0.3s ease;
 }
 
-/* ---- Responsive ---- */
+.ts__dot--active {
+  width: 28px;
+  background: var(--color-accent);
+}
+
+/* ── Responsive ── */
 @media (max-width: 1024px) {
-  .testimonials__grid {
-    grid-template-columns: repeat(2, 1fr);
+  .ts__carousel {
+    gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  .testimonials__grid {
-    grid-template-columns: 1fr;
+  .ts__bg-deco {
+    font-size: 220px;
+    right: -20px;
+    top: -20px;
   }
-  
-  .testimonials__title {
-    font-size: 1.8rem;
+
+  .ts__carousel {
+    gap: 12px;
+  }
+
+  .ts__review {
+    font-size: 1rem;
+  }
+
+  .ts__arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ts__arrow {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+
+  .ts__review {
+    font-size: 0.95rem;
+  }
+
+  .ts__quote-mark {
+    font-size: 32px;
+  }
+
+  .ts__author {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ts__author-text {
+    text-align: center;
   }
 }

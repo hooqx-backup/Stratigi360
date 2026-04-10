@@ -1,0 +1,309 @@
+/* ============================================================
+   HeroNav — shared sticky navbar for all hero sections
+   ============================================================ */
+
+/* ── Bar ── */
+.hn {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  transition: background-color 0.35s ease,
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+/* Light hero (default): scrolled → white bar */
+.hn--scrolled {
+  background-color: var(--color-white);
+  border-bottom-color: var(--color-border);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark hero: transparent with lighter border */
+.hn--dark {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+/* While overlay is open: nav goes fully transparent so the dark overlay shows */
+.hn--menu-open {
+  background-color: transparent !important;
+  border-bottom-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.hn__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  gap: 24px;
+}
+
+/* ── Logo ── */
+.hn__logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.hn__logo-img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+/* ── Desktop links ── */
+.hn__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hn__link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 8px 14px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: block;
+}
+
+.hn--dark:not(.hn--scrolled) .hn__link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hn__link:hover,
+.hn__link--active {
+  color: var(--color-accent);
+}
+
+/* ── Actions ── */
+.hn__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Hamburger ── */
+.hn__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  position: relative;
+  z-index: 1001; /* always above overlay */
+}
+
+.hn__hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-primary);
+  border-radius: 2px;
+  transition: transform  0.4s cubic-bezier(0.76, 0, 0.24, 1),
+              opacity    0.3s ease,
+              width      0.3s ease,
+              background-color 0.35s ease;
+}
+
+/* On dark heroes, lines start white */
+.hn--dark:not(.hn--scrolled) .hn__hamburger span {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Once overlay is open, lines are always white */
+.hn__hamburger--open span {
+  background-color: var(--color-white) !important;
+}
+
+/* Morph to × */
+.hn__hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hn__hamburger--open span:nth-child(2) { opacity: 0; width: 0; }
+.hn__hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+
+/* ══════════════════════════════════════════
+   FULL-SCREEN OVERLAY
+   ══════════════════════════════════════════ */
+.hn__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  background: linear-gradient(135deg, #0a0f1e 0%, #15213a 50%, #0a0f1e 100%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  overflow: hidden;
+
+  /* Collapsed circle originating from the hamburger (top-right) */
+  clip-path: circle(0% at calc(100% - 28px) 35px);
+  transition: clip-path 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+  pointer-events: none;
+}
+
+.hn__overlay--open {
+  clip-path: circle(170% at calc(100% - 28px) 35px);
+  pointer-events: all;
+}
+
+/* ── Decorative rings ── */
+.hn__ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hn__ring--1 {
+  width: 560px;
+  height: 560px;
+  border: 1px solid rgba(221, 51, 51, 0.1);
+  top: -170px;
+  right: -130px;
+}
+
+.hn__ring--2 {
+  width: 360px;
+  height: 360px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  bottom: -90px;
+  left: -110px;
+}
+
+.hn__ring--3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(221, 51, 51, 0.07) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ── Mobile nav links ── */
+.hn__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.hn__mobile-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  opacity: 0;
+  transform: translateY(50px) skewY(4deg);
+  transition:
+    opacity   0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(var(--i) * 80ms + 200ms);
+}
+
+.hn__overlay--open .hn__mobile-item {
+  opacity: 1;
+  transform: translateY(0) skewY(0deg);
+}
+
+
+.hn__mobile-link {
+  font-size: clamp(20px, 5vw, 30px);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.82);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  line-height: 1.15;
+  transition: color 0.2s ease, letter-spacing 0.25s ease;
+  position: relative;
+}
+
+.hn__mobile-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.hn__mobile-link:hover,
+.hn__mobile-link--active {
+  color: var(--color-white);
+  letter-spacing: 0.06em;
+}
+
+.hn__mobile-link:hover::after,
+.hn__mobile-link--active::after {
+  width: 100%;
+}
+
+/* ── CTA in overlay ── */
+.hn__mobile-footer {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity   0.45s ease,
+    transform 0.45s ease;
+  transition-delay: calc(var(--total) * 80ms + 280ms);
+}
+
+.hn__overlay--open .hn__mobile-footer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hn__links         { display: none; }
+  .hn__hamburger     { display: flex; }
+  /* Hide the navbar CTA — it lives inside the overlay on mobile */
+  .hn__actions > a,
+  .hn__actions > button:not(.hn__hamburger) { display: none; }
+}
+
+@media (max-width: 768px) {
+  .hn__inner { height: 62px; }
+}
+
+@media (max-width: 480px) {
+  .hn__inner { height: 56px; }
+
+  /* Adjust origin for smaller navbar */
+  .hn__overlay {
+    clip-path: circle(0% at calc(100% - 20px) 28px);
+  }
+
+  .hn__overlay--open {
+    clip-path: circle(200% at calc(100% - 20px) 28px);
+  }
+}

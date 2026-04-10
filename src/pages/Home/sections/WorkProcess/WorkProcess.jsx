@@ -17,11 +17,10 @@ const springUp = {
 }
 
 const slideInRight = {
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    x: 0,
-    transition: { type: 'spring', stiffness: 60, damping: 20 },
+    transition: { duration: 0.45, ease: 'easeOut' },
   },
 }
 
@@ -91,23 +90,25 @@ const WorkProcess = () => {
         </div>
 
         {/* Right: Sticky Image */}
-        <motion.div
-          className="process__image-wrap"
-          variants={slideInRight}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-        >
-          <div className="process__image-inner">
-            <img
-              src={workImg}
-              alt="Work Process"
-              className="process__img"
-              onError={(e) => { e.target.style.display = 'none' }}
-            />
-            <div className="process__image-overlay" />
-          </div>
-        </motion.div>
+        <div className="process__image-wrap">
+          <motion.div
+            className="process__image-col"
+            variants={slideInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+          >
+            <div className="process__image-inner">
+              <img
+                src={workImg}
+                alt="Work Process"
+                className="process__img"
+                onError={(e) => { e.target.style.display = 'none' }}
+              />
+              <div className="process__image-overlay" />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -1,21 +1,36 @@
+/* ============================================================
+   Values Section — Premium Edition
+   ============================================================ */
+
 /* ---- Header ---- */
 .values__header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 64px;
+}
+
+.values__label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 14px;
 }
 
 .values__heading {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--color-primary);
-  margin-bottom: 10px;
+  line-height: 1.22;
+  margin-bottom: 18px;
 }
 
 .values__heading-line {
-  width: 60px;
+  width: 48px;
   height: 3px;
-  background-color: var(--color-accent);
-  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-accent) 0%, #ff7070 100%);
+  border-radius: 99px;
   margin: 0 auto;
 }
 
@@ -23,74 +38,225 @@
 .values__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  align-items: start;
+  gap: 24px;
+  align-items: stretch;
 }
 
-/* ---- Card ---- */
-.values__card {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Image */
-.values__card-img-wrap {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-sm);
+/* ============================================================
+   Value Card — full-bleed image with overlay reveal
+   ============================================================ */
+.val-card {
+  position: relative;
+  border-radius: 18px;
   overflow: hidden;
-  background: #e8eaed;
-  margin-bottom: 18px;
+  aspect-ratio: 3 / 4;
+  cursor: pointer;
+  background: var(--color-primary);
+
+  /* entry shadow */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.5s ease, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.values__card-img-wrap--empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.val-card:hover {
+  box-shadow:
+    0 28px 70px rgba(37, 43, 59, 0.32),
+    0 6px 20px rgba(221, 51, 51, 0.15);
+  transform: translateY(-8px);
 }
 
-.values__card-img {
+/* ---- Image ---- */
+.val-card__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.val-card__media--fallback {
+  background: linear-gradient(135deg, #1b2033 0%, #2e3650 100%);
+}
+
+.val-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
-.values__card:hover .values__card-img {
-  transform: scale(1.04);
+.val-card:hover .val-card__img {
+  transform: scale(1.08);
 }
 
-/* Title */
-.values__card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+/* ---- Overlay ---- */
+.val-card__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  /* Default: show only bottom ~45% as dark gradient */
+  background: linear-gradient(
+    to top,
+    rgba(20, 24, 38, 0.97) 0%,
+    rgba(20, 24, 38, 0.82) 30%,
+    rgba(20, 24, 38, 0.2)  55%,
+    transparent            75%
+  );
+  transition: background 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.val-card:hover .val-card__overlay {
+  /* Hover: darken full card */
+  background: linear-gradient(
+    to top,
+    rgba(20, 24, 38, 0.97) 0%,
+    rgba(20, 24, 38, 0.92) 40%,
+    rgba(20, 24, 38, 0.78) 75%,
+    rgba(20, 24, 38, 0.55) 100%
+  );
+}
+
+/* ---- Overlay inner ---- */
+.val-card__overlay-inner {
+  width: 100%;
+  padding: 28px 26px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Card number ---- */
+.val-card__num {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
   color: var(--color-accent);
   margin-bottom: 10px;
-  line-height: 1.3;
+  display: block;
+  font-variant-numeric: tabular-nums;
 }
 
-/* Description */
-.values__card-desc {
-  font-size: var(--font-sm);
-  color: var(--color-text-light);
-  line-height: 1.8;
+/* ---- Accent line ---- */
+.val-card__accent-line {
+  width: 32px;
+  height: 2px;
+  background: var(--color-accent);
+  border-radius: 99px;
+  margin-bottom: 14px;
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition: width 0.4s ease;
+}
+
+.val-card:hover .val-card__accent-line {
+  width: 52px;
+}
+
+/* ---- Title ---- */
+.val-card__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 0;
+  transition: margin-bottom 0.45s ease;
+}
+
+/* ---- Description — hidden by default, reveals on hover ---- */
+.val-card__desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.75;
+  margin-top: 0;
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity    0.4s ease 0.08s,
+    transform  0.4s ease 0.08s,
+    margin-top 0.4s ease;
+}
+
+.val-card:hover .val-card__desc {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 14px;
 }
 
 /* ---- Responsive ---- */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .values__grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .val-card__overlay-inner {
+    padding: 22px 20px 26px;
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 900px) {
+  .values__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Last card full-width for odd count */
+  .val-card:last-child {
+    grid-column: 1 / -1;
+    aspect-ratio: 16 / 7;
+  }
+
+  .val-card:last-child .val-card__img {
+    object-position: center 30%;
+  }
+}
+
+@media (max-width: 600px) {
   .values__grid {
     grid-template-columns: 1fr;
     max-width: 440px;
     margin: 0 auto;
   }
 
-  .values__heading { font-size: 1.5rem; }
-  .values__header  { margin-bottom: 32px; }
+  .val-card {
+    aspect-ratio: 4 / 3;
+  }
+
+  .val-card:last-child {
+    grid-column: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .values__heading {
+    font-size: 1.6rem;
+  }
+
+  .values__header {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .values__heading {
+    font-size: 1.4rem;
+  }
+
+  .val-card {
+    aspect-ratio: 5 / 4;
+  }
+
+  .val-card__overlay-inner {
+    padding: 18px 18px 22px;
+  }
+
+  .val-card__title {
+    font-size: 1.05rem;
+  }
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import Navbar from '../../layout/Navbar/Navbar'
+import Button from '../../components/ui/Button/Button'
 import heroBg from '../../assets/images/hero-bg.webp'
 import './Calculator.css'
 
@@ -576,13 +576,13 @@ const Calculator = () => {
               {/* Navigation */}
               <div className="calc-nav">
                 {step > 0 && (
-                  <button type="button" className="calc-nav__back" onClick={goBack}>
+                  <Button variant="neutral" className="calc-nav__back" onClick={goBack}>
                     <i className="fa-solid fa-arrow-left" /> Back
-                  </button>
+                  </Button>
                 )}
-                <button type="button" className="calc-nav__next" onClick={goNext}>
+                <Button variant="primary" className="calc-nav__next" onClick={goNext}>
                   {step === 4 ? <><i className="fa-solid fa-paper-plane" /> Submit Request</> : <>Continue <i className="fa-solid fa-arrow-right" /></>}
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -643,9 +643,9 @@ const Calculator = () => {
                     </div>
                   </div>
 
-                  <button type="button" className="calc-results__restart" onClick={restart}>
+                  <Button variant="neutral" className="calc-results__restart" onClick={restart}>
                     <i className="fa-solid fa-rotate-left" /> Submit Another Request
-                  </button>
+                  </Button>
                 </div>
 
                 {/* Side CTA */}
@@ -672,9 +672,9 @@ const Calculator = () => {
                   >
                     <i className="fa-brands fa-whatsapp" /> Chat on WhatsApp Now
                   </a>
-                  <Link to="/contact" className="calc-results__cta-btn">
+                  <Button variant="secondary" href="/contact" className="calc-results__cta-btn">
                     Book a Free Consultation
-                  </Link>
+                  </Button>
                   <p className="calc-results__cta-note">
                     <i className="fa-solid fa-clock" /> Average response time: under 2 hours during business hours.
                   </p>

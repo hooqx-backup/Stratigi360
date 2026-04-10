@@ -1,98 +1,135 @@
-/* ---- Header Section ---- */
-.faq__header {
-  text-align: center;
-  margin-bottom: 50px;
+/* ==============================
+   FAQ Section
+   ============================== */
+
+.faq {
+  background-color: var(--color-bg-section);
 }
 
-.faq__title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 10px;
+/* ── Two-column layout ── */
+.faq__layout {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
 }
 
-.faq__underline {
-  width: 50px;
-  height: 2px;
-  background-color: #666;
-  margin: 0 auto;
+/* ── Left intro ── */
+.faq__intro {
+  position: sticky;
+  top: 120px;
 }
 
-/* ---- FAQ List ---- */
+.faq__contact-note {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin: 0 0 12px;
+}
+
+.faq__contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.faq__contact-link:hover {
+  gap: 12px;
+}
+
+/* ── Accordion list ── */
 .faq__list {
-  max-width: 900px; /* Centered container width */
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 
-/* ---- FAQ Item Card ---- */
+/* ── FAQ item card ── */
 .faq-item {
-  background-color: #232933; /* Dark background from image */
-  border-radius: 8px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
+.faq-item--open {
+  border-left-color: var(--color-accent);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Question button ── */
 .faq-item__question {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding: 25px 35px;
+  padding: 22px 24px;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 600;
 }
 
+.faq-item__q-text {
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* ── Icon circle ── */
 .faq-item__icon {
-  font-size: 26px;
-  color: #ff3333; /* Red color for arrows */
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  background: var(--color-bg-light);
+  color: var(--color-text-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  font-size: 12px;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
 }
 
-/* ---- Answer Area ---- */
-.faq-item__answer-wrap {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.faq-item--open .faq-item__icon {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
 }
 
-.faq-item--open .faq-item__answer-wrap {
-  max-height: 500px; /* Adjust based on content length */
-}
-
-.faq-item__answer-inner {
-  padding: 0 35px 35px 70px; /* Indented padding for the answer text */
-}
-
+/* ── Answer text ── */
 .faq-item__answer {
-  color: #ffffff;
-  font-size: 1rem;
-  line-height: 1.7;
-  opacity: 0.9;
+  padding: 0 24px 22px 24px;
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  line-height: 1.85;
   margin: 0;
 }
 
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-  .faq-item__question  { padding: 20px; font-size: 1rem; }
-  .faq-item__answer-inner { padding: 0 20px 20px 20px; }
-  .faq__title { font-size: 2rem; }
-  .faq__header { margin-bottom: 32px; }
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .faq__layout {
+    gap: 48px;
+  }
 }
 
-@media (max-width: 480px) {
-  .faq__title { font-size: 1.6rem; }
-  .faq-item__question { padding: 16px; font-size: 0.95rem; }
-  .faq-item__answer-inner { padding: 0 16px 16px; }
+@media (max-width: 768px) {
+  .faq__layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .faq__intro {
+    position: static;
+  }
 }

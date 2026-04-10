@@ -702,48 +702,25 @@
   background: var(--color-bg-light);
 }
 
+/* Back — visual from btn--neutral; layout + unique overrides only */
 .calc-nav__back {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border: 2px solid var(--color-border);
   border-radius: 10px;
-  font-size: var(--font-sm);
-  font-weight: 600;
-  color: var(--color-text-light);
-  background: var(--color-white);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: var(--font-family);
 }
 
 .calc-nav__back:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
   transform: translateX(-2px);
 }
 
+/* Next — visual from btn--primary; gradient + shadow override */
 .calc-nav__next {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 40px;
   background: linear-gradient(135deg, var(--color-accent) 0%, #c42020 100%);
-  color: white;
   border: none;
   border-radius: 10px;
-  font-size: var(--font-base);
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  font-family: var(--font-family);
+  padding: 14px 40px;
   box-shadow: 0 4px 16px rgba(221, 51, 51, 0.30);
 }
 
 .calc-nav__next:hover {
-  transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(221, 51, 51, 0.40);
 }
 
@@ -903,27 +880,11 @@
 
 .calc-results__next-step-desc strong { color: var(--color-primary); }
 
-/* Restart button */
+/* Restart — visual from btn--neutral; layout only */
 .calc-results__restart {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
   margin-top: 24px;
-  background: none;
-  border: 1.5px solid var(--color-border);
   border-radius: 10px;
-  color: var(--color-text-muted);
-  font-size: 12px;
-  font-weight: 600;
-  font-family: var(--font-family);
-  cursor: pointer;
   padding: 9px 18px;
-  transition: all 0.2s ease;
-}
-
-.calc-results__restart:hover {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
 }
 
 /* ── CTA panel ── */
@@ -1029,27 +990,11 @@
 
 .calc-results__whatsapp-btn i { font-size: 20px; }
 
+/* CTA btn — visual from btn--secondary; layout + radius override only */
 .calc-results__cta-btn {
-  display: block;
   width: 100%;
-  background: transparent;
-  color: var(--color-accent);
-  border: 2px solid var(--color-accent);
-  text-align: center;
-  padding: 12px 20px;
+  justify-content: center;
   border-radius: 10px;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.calc-results__cta-btn:hover {
-  background: var(--color-accent);
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(221,51,51,0.25);
 }
 
 .calc-results__cta-note {
