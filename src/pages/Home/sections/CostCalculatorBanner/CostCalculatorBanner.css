@@ -1,67 +1,349 @@
+/* ============================================================
+   Cost Calculator Banner — Premium Edition
+   ============================================================ */
+
 .calc-banner {
   position: relative;
-  width: 100%;
-  min-height: 220px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
+  padding: 90px 0;
 }
 
 .calc-banner__overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(180, 60, 60, 0.6);
+  background: linear-gradient(135deg, rgba(14, 18, 32, 0.92) 0%, rgba(30, 36, 64, 0.85) 60%, rgba(180, 40, 40, 0.55) 100%);
+  z-index: 0;
 }
 
-.calc-banner__content {
+/* ---- Background decorative shapes ---- */
+.calc-banner__bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.calc-banner__bg-circle--1 {
+  width: 520px;
+  height: 520px;
+  top: -180px;
+  right: -120px;
+  background: radial-gradient(circle, rgba(221, 51, 51, 0.12) 0%, transparent 70%);
+}
+
+.calc-banner__bg-circle--2 {
+  width: 360px;
+  height: 360px;
+  bottom: -140px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 70%);
+}
+
+/* Subtle dot grid */
+.calc-banner__bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ---- Layout ---- */
+.calc-banner__inner {
   position: relative;
   z-index: 1;
-  text-align: center;
-  max-width: 720px;
-  padding: 48px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
 }
 
-.calc-banner__heading {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.45;
-  margin-bottom: 28px;
+/* ============================================================
+   Left — Copy
+   ============================================================ */
+.calc-banner__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.calc-banner__btn {
-  display: inline-block;
-  background-color: var(--color-accent);
-  color: #fff;
-  font-size: 0.85rem;
+/* Label badge */
+.calc-banner__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
+  color: var(--color-accent);
   text-transform: uppercase;
-  text-decoration: none;
-  padding: 12px 32px;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  letter-spacing: 3.5px;
+  background: rgba(221, 51, 51, 0.1);
+  border: 1px solid rgba(221, 51, 51, 0.25);
+  border-radius: 99px;
+  padding: 6px 14px;
+  margin-bottom: 22px;
 }
 
-.calc-banner__btn:hover {
-  background-color: #b52a2a;
-  transform: translateY(-2px);
+.calc-banner__label i {
+  font-size: 10px;
 }
 
-@media (max-width: 768px) {
-  .calc-banner__content { padding: 36px 20px; }
+/* Heading */
+.calc-banner__heading {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.18;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.calc-banner__heading-accent {
+  color: var(--color-accent);
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline squiggle on accent word */
+.calc-banner__heading-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-accent), #ff7070);
+  border-radius: 99px;
+}
+
+/* Subheading */
+.calc-banner__subheading {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.75;
+  margin-bottom: 34px;
+  max-width: 440px;
+}
+
+/* CTAs */
+.calc-banner__ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+/* Shimmer sweep — layered on top of the global .btn--primary styles */
+.calc-banner__cta--shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.calc-banner__cta--shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.calc-banner__cta--shimmer:hover::before {
+  left: 160%;
+}
+
+.calc-banner__cta--shimmer:hover {
+  box-shadow: 0 12px 32px rgba(221, 51, 51, 0.45);
+}
+
+.calc-banner__cta--shimmer i {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.calc-banner__cta--shimmer:hover i {
+  transform: translateX(4px);
+}
+
+/* Trust pills */
+.calc-banner__trust {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.calc-banner__trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.2px;
+}
+
+.calc-banner__trust-pill i {
+  font-size: 12px;
+  color: var(--color-accent);
+}
+
+.calc-banner__trust-pill + .calc-banner__trust-pill {
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================================
+   Right — Floating cards
+   ============================================================ */
+.calc-banner__right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+}
+
+/* ---- Stat badges row ---- */
+.calc-banner__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.calc-banner__stat {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 18px 14px;
+  text-align: center;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.calc-banner__stat:hover {
+  border-color: rgba(221, 51, 51, 0.3);
+  background: rgba(221, 51, 51, 0.05);
+}
+
+.calc-banner__stat-value {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.calc-banner__stat-label {
+  display: block;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* ---- "No obligation" floating badge ---- */
+.calc-banner__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  align-self: flex-end;
+}
+
+.calc-banner__badge i {
+  font-size: 14px;
+  color: #4caf82;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1024px) {
+  .calc-banner__inner {
+    gap: 40px;
+  }
+
+  .calc-banner__heading {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .calc-banner__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .calc-banner__left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .calc-banner__subheading {
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .calc-banner__trust {
+    justify-content: center;
+  }
+
+  .calc-banner__right {
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .calc-banner {
+    padding: 72px 0;
+  }
 }
 
 @media (max-width: 600px) {
-  .calc-banner__heading { font-size: 1.2rem; }
-  .calc-banner { min-height: auto; }
+  .calc-banner__heading {
+    font-size: 1.75rem;
+  }
+
+  .calc-banner__ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .calc-banner__ctas .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .calc-banner__stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .calc-banner__stat-value {
+    font-size: 1.05rem;
+  }
+
+  .calc-banner {
+    padding: 56px 0;
+  }
 }
 
-@media (max-width: 480px) {
-  .calc-banner__content { padding: 28px 16px; }
-  .calc-banner__heading { font-size: 1.1rem; }
-  .calc-banner__btn { padding: 11px 24px; font-size: 0.8rem; }
+@media (max-width: 400px) {
+  .calc-banner__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-banner__heading {
+    font-size: 1.5rem;
+  }
 }

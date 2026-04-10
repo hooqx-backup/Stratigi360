@@ -7,7 +7,7 @@
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   transition: background-color var(--transition), color var(--transition),
     border-color var(--transition), box-shadow var(--transition),
     transform var(--transition);
@@ -24,7 +24,9 @@
   transform: translateY(0);
 }
 
-/* ---- Variants ---- */
+/* ── Filled variants ── */
+
+/* primary — red fill, white text (main CTA on light backgrounds) */
 .btn--primary {
   background-color: var(--color-accent);
   color: var(--color-white);
@@ -37,28 +39,7 @@
   box-shadow: 0 4px 16px rgba(221, 51, 51, 0.35);
 }
 
-.btn--secondary {
-  background-color: transparent;
-  color: var(--color-accent);
-  border: 2px solid var(--color-accent);
-}
-
-.btn--secondary:hover {
-  background-color: var(--color-accent);
-  color: var(--color-white);
-}
-
-.btn--dark {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border: 2px solid var(--color-primary);
-}
-
-.btn--dark:hover {
-  background-color: #1a1f2e;
-  border-color: #1a1f2e;
-}
-
+/* white — white fill, red text (primary CTA on dark backgrounds) */
 .btn--white {
   background-color: var(--color-white);
   color: var(--color-accent);
@@ -71,6 +52,60 @@
   border-color: var(--color-accent);
 }
 
+/* dark — navy fill, white text */
+.btn--dark {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+}
+
+.btn--dark:hover {
+  background-color: #1a1f2e;
+  border-color: #1a1f2e;
+}
+
+/* ── Outlined variants ── */
+
+/* secondary — red border + text on transparent (secondary CTA on light backgrounds) */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* outline-white — white border + text on transparent (secondary CTA on dark backgrounds) */
+.btn--outline-white {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn--outline-white:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.55);
+  background-color: rgba(255, 255, 255, 0.07);
+  box-shadow: none;
+  transform: translateY(-1px);
+}
+
+/* neutral — gray border, dark text (wizard back buttons, subtle secondary actions) */
+.btn--neutral {
+  background-color: var(--color-white);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+
+.btn--neutral:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ── Text link ── */
 .btn--link {
   background-color: transparent;
   color: var(--color-accent);
@@ -86,7 +121,7 @@
   transform: none;
 }
 
-/* ---- Sizes ---- */
+/* ── Sizes ── */
 .btn--sm {
   font-size: 11px;
   padding: 8px 18px;

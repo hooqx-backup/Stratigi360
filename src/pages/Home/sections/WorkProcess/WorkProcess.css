@@ -1,9 +1,14 @@
 /* ---- Layout ---- */
+.process {
+  padding-bottom: calc(var(--space-xl) + 120px);
+}
+
 .process__inner {
   display: grid;
   grid-template-columns: 1fr 480px;
   gap: 80px;
-  align-items: flex-start;
+  align-items: start; /* Changed from flex-start to start for CSS Grid */
+  position: relative;
 }
 
 /* ---- Left Column: Heading ---- */
@@ -132,16 +137,21 @@
 /* ---- Right Column: Sticky Image ---- */
 .process__image-wrap {
   position: sticky;
-  top: 120px; /* Gives it breathing room from the header */
+  top: 80px;
+  align-self: start;
+  z-index: 10;
+}
+
+.process__image-col {
+  width: 100%;
 }
 
 .process__image-inner {
   position: relative;
   border-radius: var(--radius-md, 16px);
   overflow: hidden;
-  aspect-ratio: 4 / 5; /* Creates a nice vertical poster look */
+  aspect-ratio: 4 / 5; /* Vertical poster look */
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1);
-  transform: translateZ(0); /* Hardware acceleration */
 }
 
 .process__img {

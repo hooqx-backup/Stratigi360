@@ -1,105 +1,242 @@
-.contact.section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 20px;
-  background-color: #f9f9f9;
+/* ==============================
+   Contact Section
+   ============================== */
+
+.cs {
+  background-color: var(--color-bg-section);
 }
 
-/* Central Card */
-.contact-form-container {
-  max-width: 650px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: #f1f1f1; /* Light grey card background */
-  padding: 50px 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  text-align: center;
+/* ── Split card ── */
+.cs__card {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
-.contact-form__title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 40px;
-}
-
-/* Form Layout */
-.contact-form {
+/* ── Left info panel ── */
+.cs__info {
+  background-color: var(--color-primary);
+  padding: 56px 48px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
-.form-group {
-  width: 100%;
+.cs__label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-accent);
+  margin-bottom: 16px;
 }
 
-/* Inputs & Textarea */
-.form-input, 
-.form-textarea {
-  width: 100%;
-  padding: 18px 20px;
-  background-color: #dcdcdc; /* Match the grey in your image */
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  color: #333;
-  outline: none;
-  transition: background-color 0.3s ease;
+.cs__heading {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1.3;
+  margin: 0 0 14px;
 }
 
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: #666;
+.cs__subheading {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.75;
+  margin: 0 0 40px;
+}
+
+/* Info list */
+.cs__info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cs__info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.cs__info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.cs__info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cs__info-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.cs__info-value {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s ease;
 }
 
-.form-input:focus,
-.form-textarea:focus {
-  background-color: #d0d0d0;
+a.cs__info-value:hover {
+  color: var(--color-accent);
 }
 
-.form-textarea {
-  height: 150px;
+/* Socials */
+.cs__socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.cs__social {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+}
+
+.cs__social:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* ── Right form panel ── */
+.cs__form-wrap {
+  background: var(--color-white);
+  padding: 56px 48px;
+}
+
+.cs__form-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 0 0 8px;
+}
+
+.cs__form-sub {
+  font-size: 0.87rem;
+  color: var(--color-text-muted);
+  margin: 0 0 32px;
+  line-height: 1.6;
+}
+
+.cs__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cs__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.cs__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs__field-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cs__input,
+.cs__textarea {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--color-bg-light);
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: var(--color-text);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.22s ease, background 0.22s ease;
+  box-sizing: border-box;
+}
+
+.cs__input::placeholder,
+.cs__textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.cs__input:focus,
+.cs__textarea:focus {
+  border-color: var(--color-accent);
+  background: var(--color-white);
+}
+
+.cs__textarea {
   resize: none;
 }
 
-/* Red Submit Button */
-.form-submit-btn {
-  width: 100%;
-  padding: 16px;
-  background-color: #e60000; /* Vibrant red from image */
-  color: #ffffff;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
+/* Submit — visual styles from global .btn--primary; only layout here */
+.cs__submit {
+  align-self: flex-start;
 }
 
-.form-submit-btn:hover {
-  background-color: #cc0000;
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .cs__info  { padding: 48px 36px; }
+  .cs__form-wrap { padding: 48px 36px; }
 }
 
-.form-submit-btn span {
-  font-size: 1.2rem;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .contact-form-container {
-    padding: 30px 20px;
+@media (max-width: 768px) {
+  .cs__card {
+    grid-template-columns: 1fr;
   }
-  
-  .contact-form__title {
-    font-size: 1.4rem;
+
+  .cs__info {
+    padding: 40px 28px;
+  }
+
+  .cs__form-wrap {
+    padding: 40px 28px;
+  }
+
+  .cs__form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cs__submit {
+    width: 100%;
   }
 }

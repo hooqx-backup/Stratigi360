@@ -26,11 +26,18 @@
     "cta": "Cost Calculator"
   },
   "hero": {
-    "headline": "Want a swift and effective business setup?",
+    "headline": "Want a swift and effective business",
+    "headlineBold": "setup?",
     "subheadline": "Quickly Understand How Much Cost You Need to Set Up Your Businesses Across the Globe",
-    "cta": "COST CALCULATOR",
+    "cta": "Cost Calculator",
+    "ctaSecondary": "Talk to an Expert",
     "rating": "4.9",
-    "reviews": "+2500"
+    "reviews": "+2500",
+    "stats": [
+      { "value": "500+", "label": "Businesses Setup" },
+      { "value": "7 Days", "label": "Avg. Setup Time" },
+      { "value": "100%", "label": "Foreign Ownership" }
+    ]
   },
   "business-destiny": {
     "heading": "Master Your Business Destiny with Stratigi360's Expertise.",
@@ -151,6 +158,29 @@
       }
     ]
   },
+  "calc-banner": {
+    "label": "Cost Calculator",
+    "heading": "Discover Your Business Setup Cost",
+    "headingAccent": "Instantly",
+    "subheading": "Get a transparent, personalised cost estimate for setting up your business in Dubai — no hidden fees, no surprises.",
+    "cta": "Try Cost Calculator",
+    "ctaSecondary": "Talk to an Expert",
+    "trust": [
+      { "icon": "fa-bolt", "text": "Instant Results" },
+      { "icon": "fa-shield-halved", "text": "No Hidden Fees" },
+      { "icon": "fa-headset", "text": "Free Consultation" }
+    ],
+    "stats": [
+      { "value": "500+", "label": "Businesses Setup" },
+      { "value": "AED 15K", "label": "Starting From" },
+      { "value": "7 Days", "label": "Avg. Setup Time" }
+    ]
+  },
+  "partners": {
+    "label": "Trusted By",
+    "heading": "Our Partners",
+    "subheading": "Powering growth for businesses across Dubai and beyond."
+  },
   "testimonials": {
     "label": "Testimonials",
     "heading": "What Our Clients Say",
@@ -177,6 +207,17 @@
         "image": "https://randomuser.me/api/portraits/men/75.jpg",
         "review": "An excellent overall experience. Every interaction with the Stratigi360 team was positive and productive. They truly understand what international businesses need to succeed in the UAE market."
       }
+    ]
+  },
+  "global": {
+    "label": "Global Presence",
+    "heading": "Reaching Businesses Worldwide",
+    "subheading": "From Dubai to the world — we help entrepreneurs from 50+ countries establish and grow their business in the UAE.",
+    "stats": [
+      { "value": "50+", "label": "Countries Served" },
+      { "value": "500+", "label": "Businesses Setup" },
+      { "value": "10+", "label": "Years Experience" },
+      { "value": "98%", "label": "Client Satisfaction" }
     ]
   },
   "faq": {
@@ -248,6 +289,227 @@
         { "label": "News", "href": "/news" }
       ]
     }
+  },
+  "privacy": {
+    "label": "Legal",
+    "heading": "Privacy Policy",
+    "subheading": "Your privacy matters to us. Learn how we collect, use, and protect your personal information.",
+    "lastUpdated": "Last updated: January 2025",
+    "intro": "Stratigi 360 FZC is committed to protecting the privacy and confidentiality of personal information provided by our clients and visitors to our website. This Privacy Policy outlines our practices regarding the collection, use, and disclosure of personal information.",
+    "sections": [
+      {
+        "id": "information-collect",
+        "icon": "fa-solid fa-database",
+        "title": "Information We Collect",
+        "body": "We may collect personal information, including but not limited to names, contact details, and business information, when you engage with our services or visit our website. This information is collected to provide you with the best possible service and experience."
+      },
+      {
+        "id": "how-we-use",
+        "icon": "fa-solid fa-gears",
+        "title": "How We Use Your Information",
+        "body": "Your personal information is used exclusively to provide and improve our services.",
+        "items": [
+          { "icon": "fa-solid fa-building", "label": "Business Setup Services", "text": "Personal information is used to facilitate the business setup process in the UAE, including documentation, licensing, and visa processing." },
+          { "icon": "fa-solid fa-comments", "label": "Communication", "text": "We may use your contact information to communicate with you regarding our services, updates, and relevant information." },
+          { "icon": "fa-solid fa-scale-balanced", "label": "Legal Compliance", "text": "Your information may be used to comply with legal obligations and regulations in the UAE." }
+        ]
+      },
+      {
+        "id": "data-security",
+        "icon": "fa-solid fa-shield-halved",
+        "title": "Data Security",
+        "body": "We employ industry-standard security measures to protect your personal information from unauthorized access, disclosure, or alteration. Our security protocols are regularly reviewed and updated to ensure the highest level of protection."
+      },
+      {
+        "id": "third-party",
+        "icon": "fa-solid fa-user-lock",
+        "title": "Third-Party Disclosure",
+        "body": "We do not sell, trade, or transfer your personal information to third parties unless required for the business setup process or as mandated by law. Your data remains confidential and is never used for commercial purposes."
+      },
+      {
+        "id": "cookies",
+        "icon": "fa-solid fa-cookie-bite",
+        "title": "Cookies and Analytics",
+        "body": "Our website may use cookies to enhance user experience. We also utilize analytics tools to gather information about website usage, helping us improve our services. You may disable cookies via your browser settings, though some features may be affected."
+      },
+      {
+        "id": "your-rights",
+        "icon": "fa-solid fa-circle-check",
+        "title": "Your Rights",
+        "body": "You have the right to access, correct, or delete your personal information. Contact us for any inquiries or requests related to your data. We will respond to all requests within a reasonable timeframe in accordance with applicable law."
+      },
+      {
+        "id": "updates",
+        "icon": "fa-solid fa-rotate",
+        "title": "Updates to Privacy Policy",
+        "body": "This Privacy Policy may be updated to reflect changes in our practices or legal requirements. It is advisable to review this policy periodically. Continued use of our website and services after changes are posted constitutes acceptance of the updated policy."
+      },
+      {
+        "id": "contact",
+        "icon": "fa-solid fa-envelope",
+        "title": "Contact Us",
+        "body": "If you have any questions or concerns about our Privacy Policy or the way we handle your personal data, please do not hesitate to reach out. By using our website and services, you consent to the terms outlined in this Privacy Policy."
+      }
+    ]
+  },
+  "terms": {
+    "label": "Legal",
+    "heading": "Terms & Conditions",
+    "subheading": "Please read these terms and conditions carefully before using the Stratigi 360 FZC website.",
+    "lastUpdated": "Last updated: January 2025",
+    "intro": "By accessing and using the Stratigi 360 FZC website, you agree to be bound by these terms and conditions. If you do not agree with any part of these terms, please refrain from using our website.",
+    "sections": [
+      {
+        "id": "acceptance",
+        "icon": "fa-solid fa-handshake",
+        "title": "Acceptance of Terms",
+        "body": "By accessing and using the Stratigi 360 FZC website, you agree to be bound by these terms and conditions. If you do not agree with any part of these terms, please refrain from using our website."
+      },
+      {
+        "id": "website-content",
+        "icon": "fa-solid fa-globe",
+        "title": "Website Content",
+        "body": "The following terms apply to all content provided on this website.",
+        "items": [
+          { "icon": "fa-solid fa-circle-info", "label": "General Information", "text": "The content provided on this website is for general information purposes only. It is subject to change without notice." },
+          { "icon": "fa-solid fa-triangle-exclamation", "label": "No Warranties", "text": "While we strive to ensure the accuracy and timeliness of the information, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website." }
+        ]
+      },
+      {
+        "id": "intellectual-property",
+        "icon": "fa-solid fa-copyright",
+        "title": "Intellectual Property",
+        "body": "All intellectual property rights on this website are owned by Stratigi 360 FZC.",
+        "items": [
+          { "icon": "fa-solid fa-lock", "label": "Ownership", "text": "All content on this website, including but not limited to text, graphics, logos, images, and software, is the property of Stratigi 360 FZC and is protected by copyright laws." },
+          { "icon": "fa-solid fa-ban", "label": "No Reproduction", "text": "You may not reproduce, distribute, display, or transmit any content on this website without the prior written permission of Stratigi 360 FZC." }
+        ]
+      },
+      {
+        "id": "user-responsibilities",
+        "icon": "fa-solid fa-user-shield",
+        "title": "User Responsibilities",
+        "body": "As a user of this website, you agree to the following responsibilities.",
+        "items": [
+          { "icon": "fa-solid fa-scale-balanced", "label": "Legal Compliance", "text": "You agree to use this website in accordance with all applicable laws and regulations." },
+          { "icon": "fa-solid fa-shield-halved", "label": "Website Security", "text": "You shall not engage in any conduct that may interfere with the proper functioning of the website or compromise its security." }
+        ]
+      },
+      {
+        "id": "privacy",
+        "icon": "fa-solid fa-shield-halved",
+        "title": "Privacy Policy",
+        "body": "Our Privacy Policy, available on a separate page, outlines how we collect, use, and protect your personal information."
+      },
+      {
+        "id": "third-party-links",
+        "icon": "fa-solid fa-link",
+        "title": "Links to Third-Party Websites",
+        "body": "This website may contain links to third-party websites for your convenience. Stratigi 360 FZC does not endorse or control these websites and is not responsible for their content or accuracy."
+      },
+      {
+        "id": "liability",
+        "icon": "fa-solid fa-gavel",
+        "title": "Limitation of Liability",
+        "body": "Stratigi 360 FZC shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your access to, use of, or inability to use this website."
+      },
+      {
+        "id": "governing-law",
+        "icon": "fa-solid fa-landmark",
+        "title": "Governing Law",
+        "body": "These terms and conditions shall be governed by and construed in accordance with the laws of United Arab Emirates."
+      },
+      {
+        "id": "changes",
+        "icon": "fa-solid fa-rotate",
+        "title": "Changes to Terms",
+        "body": "Stratigi 360 FZC reserves the right to modify these terms and conditions at any time. Changes will be effective immediately upon posting on the website."
+      },
+      {
+        "id": "contact",
+        "icon": "fa-solid fa-envelope",
+        "title": "Contact Information",
+        "body": "For any questions regarding these terms and conditions, you may contact us at info@stratigi360.com"
+      }
+    ]
+  },
+  "payment": {
+    "label": "Legal",
+    "heading": "Payment Policy",
+    "subheading": "Clear and transparent payment terms for all Stratigi 360 FZC services.",
+    "lastUpdated": "Last updated: January 2025",
+    "intro": "By engaging our services and making payments, you acknowledge that you have read, understood, and agreed to these payment terms. All transactions are subject to the conditions outlined below.",
+    "sections": [
+      {
+        "id": "payment-methods",
+        "icon": "fa-solid fa-credit-card",
+        "title": "Payment Methods",
+        "body": "Stratigi 360 FZC accepts the following payment methods for all services.",
+        "items": [
+          { "icon": "fa-solid fa-credit-card", "label": "Credit Card", "text": "We accept all major credit cards for fast and secure payment processing." },
+          { "icon": "fa-solid fa-building-columns", "label": "Bank Transfer", "text": "Direct bank transfers are accepted. Please quote your invoice number as the payment reference." },
+          { "icon": "fa-solid fa-money-check", "label": "Cheque Deposit", "text": "Cheque deposits are accepted and should be made payable to Stratigi 360 FZC." }
+        ]
+      },
+      {
+        "id": "service-fees",
+        "icon": "fa-solid fa-file-invoice-dollar",
+        "title": "Service Fees",
+        "body": "The fees for our business setup services are outlined in the service agreement provided to you upon engagement. All fees are quoted in AED (UAE Dirham). Stratigi 360 FZC reserves the right to adjust fees at its discretion, and any changes will be communicated to clients in advance."
+      },
+      {
+        "id": "payment-schedule",
+        "icon": "fa-solid fa-calendar-check",
+        "title": "Payment Schedule",
+        "body": "Clients are required to adhere to the payment schedule outlined in the service agreement. Timely payments ensure uninterrupted delivery of your business setup services."
+      },
+      {
+        "id": "late-payments",
+        "icon": "fa-solid fa-clock",
+        "title": "Late Payments",
+        "body": "Payments not received by the specified due date will be considered late.",
+        "items": [
+          { "icon": "fa-solid fa-triangle-exclamation", "label": "Late Fee", "text": "Stratigi 360 FZC reserves the right to charge a late fee for any overdue payments." },
+          { "icon": "fa-solid fa-ban", "label": "Service Suspension", "text": "Failure to make timely payments may result in the suspension or termination of services until the outstanding balance is settled." }
+        ]
+      },
+      {
+        "id": "refunds",
+        "icon": "fa-solid fa-rotate-left",
+        "title": "Refunds",
+        "body": "Refunds are subject to the terms outlined in the service agreement. Stratigi 360 FZC reserves the right to issue refunds or credits at its discretion based on the circumstances of each case."
+      },
+      {
+        "id": "taxes",
+        "icon": "fa-solid fa-percent",
+        "title": "Taxes",
+        "body": "All fees are exclusive of any applicable taxes. Applicable taxes will be added to the invoice as required by UAE law, including VAT where applicable."
+      },
+      {
+        "id": "currency",
+        "icon": "fa-solid fa-coins",
+        "title": "Currency & Exchange Rates",
+        "body": "All transactions are conducted in AED (UAE Dirham). Any currency conversion fees or exchange rate differences arising from international payments are the sole responsibility of the client."
+      },
+      {
+        "id": "payment-confirmation",
+        "icon": "fa-solid fa-circle-check",
+        "title": "Payment Confirmation",
+        "body": "Payment confirmation will be sent to the client via email once the payment has been successfully processed. Please retain this confirmation for your records."
+      },
+      {
+        "id": "disputes",
+        "icon": "fa-solid fa-scale-balanced",
+        "title": "Disputes",
+        "body": "Any disputes regarding payments should be communicated to Stratigi 360 FZC in writing within 2 days of receiving the invoice. We are committed to resolving all payment disputes promptly and fairly."
+      },
+      {
+        "id": "contact",
+        "icon": "fa-solid fa-envelope",
+        "title": "Contact Information",
+        "body": "For any questions or clarifications regarding our payment terms, please do not hesitate to get in touch with our team."
+      }
+    ]
   },
   "contactSite": {
     "phone": "04 509 5911",

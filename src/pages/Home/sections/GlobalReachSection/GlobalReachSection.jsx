@@ -1,75 +1,134 @@
 import { motion } from 'framer-motion'
 import content from '../../../../locales/en.json'
-import mapAndBg from '../../../../assets/images/image-2.webp'
+import mapImg from '../../../../assets/images/image-2.webp'
+import SectionTitle from '../../../../components/ui/SectionTitle/SectionTitle'
 import './GlobalReachSection.css'
-import { fadeLeft, fadeRight, fadeUp, staggerContainer, viewportOnce } from '../../../../utils/motionVariants'
+import { fadeUp, fadeLeft, fadeRight, staggerContainer, viewportOnce } from '../../../../utils/motionVariants'
 
-const { contactSite } = content
+const { global: globalContent, site, social } = content
+
+/* Pulse dot positions (% from top-left of map) */
+const DOTS = [
+  { top: '52%', left: '62.5%', label: 'Dubai' },
+  { top: '35.5%', left: '46.5%', label: 'UK' },
+  { top: '33.5%', left: '17.5%', label: 'USA' },
+  { top: '38%', left: '49.9%', label: 'India' },
+  { top: '45%', left: '22.5%', label: 'Asia' },
+  { top: '53%', left: '69%', label: 'Brazil' },
+]
+
+const CONTACT_ITEMS = [
+  { icon: 'fa-phone',        value: site.phone,        href: `tel:${site.phone}` },
+  { icon: 'fa-envelope',     value: site.email,        href: `mailto:${site.email}` },
+  { icon: 'fa-brands fa-whatsapp', value: 'WhatsApp Us', href: `https://wa.me/${site.whatsapp}` },
+]
+
+const SOCIALS = [
+  { icon: 'fa-brands fa-facebook-f',  href: social.facebook,  label: 'Facebook' },
+  { icon: 'fa-brands fa-instagram',   href: social.instagram, label: 'Instagram' },
+  { icon: 'fa-brands fa-linkedin-in', href: social.linkedin,  label: 'LinkedIn' },
+  { icon: 'fa-brands fa-youtube',     href: social.youtube,   label: 'YouTube' },
+  { icon: 'fa-brands fa-x-twitter',   href: social.twitter,   label: 'Twitter' },
+]
 
 const GlobalReachSection = () => (
-  <section className="global-reach">
-    <motion.div
-      className="global-reach__inner"
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={viewportOnce}
-    >
-      {/* Left — World Map Image */}
-      <motion.div className="global-reach__map" variants={fadeLeft}>
-        <img src={mapAndBg} alt="Global Reach Map" className="global-reach__map-img" />
-      </motion.div>
+  <section className="gr section">
+    <div className="container">
 
-      {/* Right — Contact Panel */}
+      {/* ── Header ── */}
       <motion.div
-        className="global-reach__panel"
-        style={{ backgroundImage: `url(${mapAndBg})` }}
-        variants={fadeRight}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
       >
-        <div className="global-reach__panel-overlay" />
-        <div className="global-reach__panel-content">
-
-          <h2 className="global-reach__contact-heading">Contact Us</h2>
-
-          <ul className="global-reach__contact-list">
-            <li>
-              <i className="fa-solid fa-phone" />
-              <a href={`tel:${contactSite.phone}`}>{contactSite.phone}</a>
-            </li>
-            <li>
-              <i className="fa-brands fa-whatsapp" />
-              <a href={`https://wa.me/${contactSite.whatsapp.replace(/\s/g, '')}`}>{contactSite.whatsapp}</a>
-            </li>
-            <li>
-              <i className="fa-solid fa-envelope" />
-              <a href={`mailto:${contactSite.email}`}>{contactSite.email}</a>
-            </li>
-          </ul>
-
-          <h3 className="global-reach__social-heading">Follow Us</h3>
-
-          <div className="global-reach__socials">
-            <a href={contactSite.socials.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
-              <i className="fa-brands fa-facebook-f" />
-            </a>
-            <a href={contactSite.socials.twitter} target="_blank" rel="noreferrer" aria-label="Twitter">
-              <i className="fa-brands fa-x-twitter" />
-            </a>
-            <a href={contactSite.socials.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
-              <i className="fa-brands fa-instagram" />
-            </a>
-            <a href={contactSite.socials.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <i className="fa-brands fa-linkedin-in" />
-            </a>
-            <a href={contactSite.socials.youtube} target="_blank" rel="noreferrer" aria-label="YouTube">
-              <i className="fa-brands fa-youtube" />
-            </a>
-          </div>
-
-        </div>
+        <SectionTitle
+          label={globalContent.label}
+          heading={globalContent.heading}
+          subheading={globalContent.subheading}
+          align="center"
+        />
       </motion.div>
 
-    </motion.div>
+      {/* ── Map + dots ── */}
+      <motion.div
+        className="gr__map-wrap"
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
+        <img src={mapImg} alt="Global reach map" className="gr__map-img" />
+
+        {DOTS.map((dot) => (
+          <div
+            key={dot.label}
+            className="gr__dot"
+            style={{ top: dot.top, left: dot.left }}
+            title={dot.label}
+          >
+            <span className="gr__dot-ring" />
+            <span className="gr__dot-ring gr__dot-ring--delay" />
+            <span className="gr__dot-core" />
+          </div>
+        ))}
+      </motion.div>
+
+      {/* ── Stats strip ── */}
+      <motion.div
+        className="gr__stats"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
+        {globalContent.stats.map((stat, i) => (
+          <motion.div key={i} className="gr__stat" variants={fadeUp}>
+            <strong className="gr__stat-value">{stat.value}</strong>
+            <span className="gr__stat-label">{stat.label}</span>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* ── Contact + socials strip ── */}
+      <motion.div
+        className="gr__contact"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
+        <motion.div className="gr__contact-items" variants={fadeLeft}>
+          {CONTACT_ITEMS.map((item) => (
+            <a key={item.value} href={item.href} className="gr__contact-item">
+              <span className="gr__contact-icon">
+                <i className={item.icon.startsWith('fa-brands') ? item.icon : `fa-solid ${item.icon}`} />
+              </span>
+              <span className="gr__contact-value">{item.value}</span>
+            </a>
+          ))}
+        </motion.div>
+
+        <div className="gr__contact-divider" aria-hidden="true" />
+
+        <motion.div className="gr__socials" variants={fadeRight}>
+          <span className="gr__socials-label">Follow Us</span>
+          {SOCIALS.map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              className="gr__social"
+              aria-label={s.label}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className={s.icon} />
+            </a>
+          ))}
+        </motion.div>
+      </motion.div>
+
+    </div>
   </section>
 )
 
