@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast'
 
 const ScrollToTopOnNavigate = () => {
   const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }) }, [pathname])
   return null
 }
 import Home       from './pages/Home/Home'
@@ -15,6 +15,7 @@ import Calculator    from './pages/Calculator/Calculator'
 import PrivacyPolicy from './pages/PrivacyPolicy/PrivacyPolicy'
 import TermsConditions from './pages/TermsConditions/TermsConditions'
 import PaymentPolicy from './pages/PaymentPolicy/PaymentPolicy'
+import NotFound from './pages/NotFound/NotFound'
 import Topbar from './layout/Topbar/Topbar'
 import Footer from './layout/Footer/Footer'
 import ScrollToTop from './components/ui/ScrollToTop/ScrollToTop'
@@ -66,6 +67,7 @@ function App() {
           <Route path="/privacy-policy"  element={<PrivacyPolicy />} />
           <Route path="/terms"           element={<TermsConditions />} />
           <Route path="/payment-policy"  element={<PaymentPolicy />} />
+          <Route path="*"               element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

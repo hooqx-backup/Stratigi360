@@ -1,9 +1,9 @@
-import Navbar from '../../layout/Navbar/Navbar'
-import ServicesGridSection from './sections/ServicesGridSection/ServicesGridSection'
+import ServicesHeroSection from './sections/ServicesHeroSection/ServicesHeroSection'
+import ServicesGridSection  from './sections/ServicesGridSection/ServicesGridSection'
 
 const Services = () => (
   <>
-    <Navbar />
+    <ServicesHeroSection />
     <ServicesGridSection />
   </>
 )
