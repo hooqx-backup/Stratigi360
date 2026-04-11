@@ -46,8 +46,8 @@
   },
   "about": {
     "heading": "About Us",
-    "body": "Welcome to Stratigi360, a beacon of innovation and efficiency in the world of business setup services where we redefine the process of establishing your business, making it seamless and stress-free. Our commitment to transparency, efficiency, and personalized service sets us apart.",
-    "body2": "Specializing in a range of vital services, including business consultations, setup, legal & tax consultations, operations consultation, collateral building, marketing management, digital solutions, virtual assistance (BPO/KPO), and investment & financial consultations, we are your one-stop solution for comprehensive business support.",
+    "body": "Welcome to Stratigi360 – where your success is not just a goal; it's our mission! We're not just a company; we're your dynamic ally in navigating the intricate world of business in Dubai. Whether you're a startup aiming for the stars or an international business seeking a smooth journey, we've got your back.",
+    "body2": "Our services are more than just paperwork; they're the building blocks of your success. From setting up your company with ease to handling government registrations, meticulous financial management, and ensuring annual compliance – we cover it all.",
     "cta": "Know More"
   },
   "process": {
@@ -86,55 +86,55 @@
         "icon": "fa-lightbulb",
         "title": "Business Consultation",
         "category": "Consultation",
-        "description": "Our consultation experts provide tailored solutions to optimize your business strategies and propel growth. Trust us to be your partner in success, offering insightful guidance for a thriving venture."
+        "description": "Start your dream business in Dubai with expert consultation at every step of the way."
       },
       {
         "icon": "fa-scale-balanced",
         "title": "Legal & Tax Consultation",
         "category": "Consultation",
-        "description": "Stratigi360 encompasses leading legal and tax consultants with a highly dynamic workforce that offer precise guidance to ensure compliance and optimize your financial strategies."
+        "description": "Stratigi360 is one of Dubai's leading legal and tax consultants with a dynamic workforce."
       },
       {
         "icon": "fa-building",
         "title": "Business Setup",
         "category": "Business Setup",
-        "description": "Easily set up your business with vital Stratigi360 guidance, as we specialize in seamless business setup solutions, consulting you through the intricacies of establishing and expanding your venture."
+        "description": "Easily set up for business in Dubai as a foreigner with Stratigi360 guidance."
       },
       {
         "icon": "fa-palette",
         "title": "Collateral Building",
         "category": "Business Setup",
-        "description": "As one of the industry-leading business setup service providers in Dubai, we help you build compelling collateral that elevates your brand presence and drives business credibility."
+        "description": "As one of the industry leaders, our team will always give the perfect solutions."
       },
       {
         "icon": "fa-gears",
         "title": "Operations Consultation",
         "category": "Consultation",
-        "description": "We specialize in the development of business processes and operations, providing expert operational guidance to streamline efficiency and maximize productivity across your organization."
+        "description": "We specialise in the development and implementation of business operational strategies."
       },
       {
         "icon": "fa-bullhorn",
         "title": "Marketing Management",
         "category": "Digital & Marketing",
-        "description": "We have a team of experienced marketing professionals who create data-driven strategies to strengthen your brand, expand your reach, and drive sustainable business growth."
+        "description": "We have ample amounts of experience in marketing management to grow your business in Dubai."
       },
       {
         "icon": "fa-laptop-code",
         "title": "Digital Solutions",
         "category": "Digital & Marketing",
-        "description": "From web development to digital transformation, we deliver cutting-edge technology solutions tailored to modernize your business operations and accelerate your digital growth."
+        "description": "Stratigi360 provides end-to-end Digital Solutions services to businesses in Dubai."
       },
       {
         "icon": "fa-headset",
         "title": "Virtual Assistance (BPO/KPO)",
         "category": "Digital & Marketing",
-        "description": "Our virtual assistance services cover a wide range of business and knowledge process outsourcing needs, giving your organization expert support without the overhead."
+        "description": "If you need a virtual assistant who can keep up, hire our qualified & experienced virtual assistants."
       },
       {
         "icon": "fa-chart-line",
         "title": "Investment & Financial Consultation",
         "category": "Consultation",
-        "description": "We provide strategic financial consultation and investment guidance to help you make sound decisions, secure funding, and position your business for long-term financial success."
+        "description": "We are the fastest-growing Financial Consultancy offering custom solutions in the field of investment."
       }
     ]
   },
@@ -187,25 +187,25 @@
     "subheading": "Real experiences from the businesses we've helped establish and grow.",
     "items": [
       {
-        "name": "Mohammed A.",
+        "name": "Mohammed",
         "role": "Entrepreneur, Dubai",
         "rating": 5,
         "image": "https://randomuser.me/api/portraits/men/32.jpg",
-        "review": "The personalized approach and attention to detail from the Stratigi360 team was outstanding. They handled every aspect of my business setup with professionalism and care. I couldn't have done it without them."
+        "review": "What sets Stratigi360 apart is their personalized approach. They took the time to understand my needs and tailored a solution that fit perfectly. I appreciate the attention to detail and commitment to customer satisfaction. Amazing service!"
       },
       {
         "name": "Zara K.",
         "role": "CEO, Tech Startup",
         "rating": 5,
         "image": "https://randomuser.me/api/portraits/women/44.jpg",
-        "review": "What impressed me most was the consistency — from the initial inquiry all the way through to ongoing support. The team remained attentive and professional at every single stage of the process."
+        "review": "My experience with Stratigi360 has been excellent from the first inquiry to ongoing support. Every interaction has been consistently positive. Thanks to the entire team for a seamless and remarkable experience. Your commitment to excellence is truly appreciated!"
       },
       {
-        "name": "Michael T.",
+        "name": "Michael",
         "role": "International Investor",
         "rating": 5,
         "image": "https://randomuser.me/api/portraits/men/75.jpg",
-        "review": "An excellent overall experience. Every interaction with the Stratigi360 team was positive and productive. They truly understand what international businesses need to succeed in the UAE market."
+        "review": "My overall experience with Stratigi360 has been nothing short of excellent. From the initial inquiry to the consistent support, every interaction has been positive. Thank you for providing such a great experience."
       }
     ]
   },
@@ -226,20 +226,20 @@
     "subheading": "Everything you need to know about setting up your business with Stratigi360.",
     "items": [
       {
-        "question": "Can foreign entrepreneurs set up businesses in Dubai?",
-        "answer": "Absolutely. Dubai is one of the most welcoming business environments for foreign entrepreneurs, with over 80% of its residents being expatriates. Foreign nationals can own 100% of their business in free zones and, with recent regulatory updates, in many mainland sectors as well."
+        "question": "Can a foreigner set up a business in Dubai?",
+        "answer": "Yes, absolutely! Many people from abroad choose to start their businesses in Dubai. Surprisingly, even more than 80% of Dubai's residents come from other countries, and a good number of them run their own businesses. Dubai warmly embraces foreign investors and entrepreneurs, making it an attractive hub for setting up shop."
       },
       {
-        "question": "How long does the business setup process take?",
-        "answer": "Timelines can range from a few days to several months depending on the business type, jurisdiction, and documentation requirements. With Stratigi360's streamlined processes and expert team, we significantly reduce setup times compared to managing the process independently."
+        "question": "How quickly can I start my business?",
+        "answer": "Every jurisdiction in Dubai has its own timeline for setting up a company. It could range from a few business days to several months, or sometimes even longer. However, with Stratigi360, we streamline the process, aiming to get it done in just a few days."
       },
       {
-        "question": "What types of businesses can be set up in Dubai?",
-        "answer": "A wide range of business activities are eligible, including real estate, e-commerce, beauty and fitness, employment agencies, trading companies, cleaning services, technology firms, consulting businesses, and many more. We help identify the right license type for your specific activity."
+        "question": "What types of businesses can I set up in Dubai?",
+        "answer": "Real estate is obviously one of the most established industries in Dubai. Also, promising business opportunities lie in Dubai like e-commerce, beauty and fitness, employment, online trading, and cleaning services."
       },
       {
-        "question": "How much does business setup in Dubai cost?",
-        "answer": "Costs vary depending on the business type, chosen jurisdiction (mainland vs free zone), number of visas required, and specific licensing requirements. Stratigi360 provides a transparent cost breakdown through our Cost Calculator tool — giving you a clear picture before you commit."
+        "question": "What is the cost of starting a business in Dubai?",
+        "answer": "The cost of setting up a business in Dubai can differ greatly based on factors like the type of business, where it's located (mainland or free zone), and its specific needs. Typically, costs encompass license fees, registration expenses, office space rent, visa fees, and other related charges. For accurate cost estimates, it's wise to reach out to our business setup consultant."
       }
     ]
   },
@@ -285,8 +285,7 @@
       "links": [
         { "label": "Privacy Policy", "href": "/privacy-policy" },
         { "label": "Terms and Conditions", "href": "/terms" },
-        { "label": "Payment Policy", "href": "/payment-policy" },
-        { "label": "News", "href": "/news" }
+        { "label": "Payment Policy", "href": "/payment-policy" }
       ]
     }
   },
