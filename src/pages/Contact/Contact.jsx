@@ -4,7 +4,7 @@ import ContactFormSection from './sections/ContactFormSection/ContactFormSection
 const Contact = () => (
   <>
     <ContactHeroSection />
-    {/* <ContactFormSection /> */}
+    <ContactFormSection />
   </>
 )
 

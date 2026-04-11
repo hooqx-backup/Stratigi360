@@ -93,7 +93,7 @@ const ContactFormSection = () => {
               </div>
 
               <div className="ct-info__card">
-                <div className="ct-info__icon"><i className="fa-solid fa-location-dot" /></div>
+                <div className="ct-info__icon"><i className="fa-solid fa-location-dot"/></div>
                 <div>
                   <span className="ct-info__label">{contact.info.address.label}</span>
                   <span className="ct-info__value">{contact.info.address.value}</span>
