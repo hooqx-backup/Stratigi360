@@ -24,6 +24,7 @@ const SOCIALS = [
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' })
+  const [submitted, setSubmitted] = useState(false)
 
   const handleChange = (e) => setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   const handleSubmit = (e) => {
@@ -34,7 +35,9 @@ const ContactSection = () => {
     }
     toast.success("Message sent! We'll get back to you shortly.")
     setForm({ name: '', phone: '', email: '', message: '' })
+    setSubmitted(true)
   }
+  const handleReset = () => setSubmitted(false)
 
   return (
     <section className="cs section">
@@ -80,66 +83,84 @@ const ContactSection = () => {
 
           {/* ── Right: form ── */}
           <motion.div className="cs__form-wrap" variants={fadeRight}>
-            <h3 className="cs__form-title">Send Us a Message</h3>
-            <p className="cs__form-sub">Fill in the form and our team will get back to you within 24 hours.</p>
-
-            <form className="cs__form" onSubmit={handleSubmit} noValidate>
-              <div className="cs__form-row">
-                <div className="cs__field">
-                  <label className="cs__field-label">Full Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={form.name}
-                    onChange={handleChange}
-                    placeholder="Mohammed Al Rashid"
-                    className="cs__input"
-                    required
-                  />
+            {submitted ? (
+              <div className="cs__success">
+                <div className="cs__success-icon">
+                  <i className="fa-solid fa-circle-check" />
                 </div>
-                <div className="cs__field">
-                  <label className="cs__field-label">Phone Number</label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={form.phone}
-                    onChange={handleChange}
-                    placeholder="+971 50 000 0000"
-                    className="cs__input"
-                  />
-                </div>
+                <h3 className="cs__success-title">Message Sent!</h3>
+                <p className="cs__success-body">
+                  Thank you for reaching out. Our team will get back to you within 24 hours.
+                </p>
+                <button className="cs__success-reset" onClick={handleReset}>
+                  <i className="fa-solid fa-arrow-rotate-left" />
+                  Send another message
+                </button>
               </div>
+            ) : (
+              <>
+                <h3 className="cs__form-title">Send Us a Message</h3>
+                <p className="cs__form-sub">Fill in the form and our team will get back to you within 24 hours.</p>
 
-              <div className="cs__field">
-                <label className="cs__field-label">Email Address</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder="you@example.com"
-                  className="cs__input"
-                  required
-                />
-              </div>
+                <form className="cs__form" onSubmit={handleSubmit} noValidate>
+                  <div className="cs__form-row">
+                    <div className="cs__field">
+                      <label className="cs__field-label">Full Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="Mohammed Al Rashid"
+                        className="cs__input"
+                        required
+                      />
+                    </div>
+                    <div className="cs__field">
+                      <label className="cs__field-label">Phone Number</label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={form.phone}
+                        onChange={handleChange}
+                        placeholder="+971 50 000 0000"
+                        className="cs__input"
+                      />
+                    </div>
+                  </div>
 
-              <div className="cs__field">
-                <label className="cs__field-label">Message</label>
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about your business goals..."
-                  className="cs__textarea"
-                  rows={5}
-                />
-              </div>
+                  <div className="cs__field">
+                    <label className="cs__field-label">Email Address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="you@example.com"
+                      className="cs__input"
+                      required
+                    />
+                  </div>
 
-              <Button variant="primary" type="submit" className="cs__submit">
-                Send Message
-                <i className="fa-solid fa-paper-plane" />
-              </Button>
-            </form>
+                  <div className="cs__field">
+                    <label className="cs__field-label">Message</label>
+                    <textarea
+                      name="message"
+                      value={form.message}
+                      onChange={handleChange}
+                      placeholder="Tell us about your business goals..."
+                      className="cs__textarea"
+                      rows={5}
+                    />
+                  </div>
+
+                  <Button variant="primary" type="submit" className="cs__submit">
+                    Send Message
+                    <i className="fa-solid fa-paper-plane" />
+                  </Button>
+                </form>
+              </>
+            )}
           </motion.div>
 
         </motion.div>

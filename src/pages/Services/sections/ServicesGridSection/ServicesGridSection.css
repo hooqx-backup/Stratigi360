@@ -97,6 +97,10 @@
   color: var(--color-accent);
 }
 
+.sg-tab--active:hover {
+  color: #fff;
+}
+
 .sg-tab--active {
   border-color: var(--color-accent);
   color: #fff;
@@ -554,59 +558,39 @@
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .sg-grid__grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 768px) {
-  .sg-tabs-scroll {
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 0 0 10px;
-    margin-bottom: 24px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    touch-action: pan-x;
-  }
-
-  .sg-tabs-scroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  .sg-tabs {
-    display: inline-flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    width: max-content;
-    min-width: 100%;
-    margin-bottom: 0;
-    padding: 2px 2px 4px;
-  }
-
-  .sg-tabs::after {
-    content: none;
-  }
-
-  .sg-tab {
-    flex-shrink: 0;
-    white-space: nowrap;
-    padding: 9px 16px;
-  }
-
   .sg-grid__header { margin-bottom: 36px; }
   .sg-cta { padding: var(--space-xl) 0; }
 }
 
-@media (max-width: 480px) {
-  .sg-tabs-scroll {
-    padding-bottom: 8px;
-  }
-
+@media (max-width: 768px) {
+  /* 2-column grid — chips are equal width, perfectly aligned */
   .sg-tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
+    margin-bottom: 28px;
   }
 
   .sg-tab {
-    padding: 8px 14px;
-    font-size: 12px;
-    gap: 6px;
+    justify-content: center;
+    padding: 10px 12px;
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+
+  .sg-grid__grid { grid-template-columns: 1fr; }
+  .sg-cta { padding: var(--space-xl) 0; }
+}
+
+@media (max-width: 480px) {
+  .sg-tabs {
+    gap: 7px;
+  }
+
+  .sg-tab {
+    padding: 9px 8px;
+    font-size: 11.5px;
+    gap: 5px;
   }
 
   .sg-tab__count {

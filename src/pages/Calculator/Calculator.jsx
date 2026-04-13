@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Navbar from '../../layout/Navbar/Navbar'
+import HeroNav from '../../components/ui/HeroNav/HeroNav'
 import Button from '../../components/ui/Button/Button'
 import heroBg from '../../assets/images/hero-bg.webp'
 import './Calculator.css'
@@ -190,7 +190,7 @@ const Calculator = () => {
 
   return (
     <div className="calc-page">
-      <Navbar />
+      <HeroNav />
 
       {/* ── Hero ── */}
       <div className="calc-page__hero" style={{ backgroundImage: `url(${heroBg})` }}>
@@ -330,7 +330,7 @@ const Calculator = () => {
                     <div className="calc-counter-info">
                       <div className="calc-counter-label">Number of Shareholders</div>
                       <div className="calc-counter-note">
-                        <i className="fa-solid fa-circle-info" /> Each shareholder is listed in the Memorandum of Association.
+                        <i className="fa-solid fa-circle-info" /> HOW MANY SHAREHOLDERS WILL YOUR COMPANY HAVE?
                       </div>
                     </div>
                     <div className="calc-counter">
@@ -347,7 +347,7 @@ const Calculator = () => {
                   {/* Visas */}
                   <div className="calc-field-group">
                     <label className="calc-field-label">
-                      How many UAE residence visas will you need? <span className="calc-required">*</span>
+                      How many Visas will you need? <span className="calc-required">*</span>
                     </label>
                     <div className="calc-visa-grid">
                       {VISA_OPTIONS.map(v => (
@@ -449,7 +449,7 @@ const Calculator = () => {
                   {/* Turnover */}
                   <div className="calc-field-group">
                     <label className="calc-field-label">
-                      Forecasted annual turnover in the next 12 months <span className="calc-required">*</span>
+                      YOUR CURRENT OR FORECASTED ANNUAL TURNOVER FOR YOUR BUSINESS IN THE NEXT 12 MONTHS. <span className="calc-required">*</span>
                     </label>
                     <div className="calc-cards calc-cards--3">
                       {TURNOVER_OPTIONS.map(t => (

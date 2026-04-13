@@ -24,6 +24,7 @@ const SOCIALS = [
 
 const ContactFormSection = () => {
   const [form, setForm] = useState({ name: '', phone: '', email: '', message: '' })
+  const [submitted, setSubmitted] = useState(false)
   const onChange = (e) => setForm(p => ({ ...p, [e.target.name]: e.target.value }))
   const onSubmit = (e) => {
     e.preventDefault()
@@ -33,7 +34,9 @@ const ContactFormSection = () => {
     }
     toast.success("Message sent! We'll get back to you shortly.")
     setForm({ name: '', phone: '', email: '', message: '' })
+    setSubmitted(true)
   }
+  const onReset = () => setSubmitted(false)
 
   return (
     <>
@@ -82,41 +85,59 @@ const ContactFormSection = () => {
 
             {/* Left — Form */}
             <motion.div className="ctf__form-wrap" variants={fadeLeft}>
-              <span className="ctf__label">{contact.form.heading}</span>
-              <h2 className="ctf__heading">Send Us a Message</h2>
-              <p className="ctf__sub">{contact.form.sub}</p>
-
-              <form className="ctf__form" onSubmit={onSubmit} noValidate>
-                <div className="ctf__row">
-                  <div className="ctf__field">
-                    <label className="ctf__field-label">Full Name</label>
-                    <input type="text" name="name" value={form.name} onChange={onChange}
-                      placeholder="Mohammed Al Rashid" className="ctf__input" required />
+              {submitted ? (
+                <div className="ctf__success">
+                  <div className="ctf__success-icon">
+                    <i className="fa-solid fa-circle-check" />
                   </div>
-                  <div className="ctf__field">
-                    <label className="ctf__field-label">Phone Number</label>
-                    <input type="tel" name="phone" value={form.phone} onChange={onChange}
-                      placeholder="+971 50 000 0000" className="ctf__input" />
-                  </div>
+                  <h3 className="ctf__success-title">Message Sent!</h3>
+                  <p className="ctf__success-body">
+                    Thank you for reaching out. Our team will get back to you within 24 hours.
+                  </p>
+                  <button className="ctf__success-reset" onClick={onReset}>
+                    <i className="fa-solid fa-arrow-rotate-left" />
+                    Send another message
+                  </button>
                 </div>
+              ) : (
+                <>
+                  <span className="ctf__label">{contact.form.heading}</span>
+                  <h2 className="ctf__heading">Send Us a Message</h2>
+                  <p className="ctf__sub">{contact.form.sub}</p>
 
-                <div className="ctf__field">
-                  <label className="ctf__field-label">Email Address</label>
-                  <input type="email" name="email" value={form.email} onChange={onChange}
-                    placeholder="you@example.com" className="ctf__input" required />
-                </div>
+                  <form className="ctf__form" onSubmit={onSubmit} noValidate>
+                    <div className="ctf__row">
+                      <div className="ctf__field">
+                        <label className="ctf__field-label">Full Name</label>
+                        <input type="text" name="name" value={form.name} onChange={onChange}
+                          placeholder="Mohammed Al Rashid" className="ctf__input" required />
+                      </div>
+                      <div className="ctf__field">
+                        <label className="ctf__field-label">Phone Number</label>
+                        <input type="tel" name="phone" value={form.phone} onChange={onChange}
+                          placeholder="+971 50 000 0000" className="ctf__input" />
+                      </div>
+                    </div>
 
-                <div className="ctf__field">
-                  <label className="ctf__field-label">Your Message</label>
-                  <textarea name="message" value={form.message} onChange={onChange}
-                    placeholder="Tell us about your business goals..." className="ctf__textarea" rows={5} />
-                </div>
+                    <div className="ctf__field">
+                      <label className="ctf__field-label">Email Address</label>
+                      <input type="email" name="email" value={form.email} onChange={onChange}
+                        placeholder="you@example.com" className="ctf__input" required />
+                    </div>
 
-                <Button variant="primary" type="submit" className="ctf__submit">
-                  <i className="fa-solid fa-paper-plane" />
-                  {contact.form.button}
-                </Button>
-              </form>
+                    <div className="ctf__field">
+                      <label className="ctf__field-label">Your Message</label>
+                      <textarea name="message" value={form.message} onChange={onChange}
+                        placeholder="Tell us about your business goals..." className="ctf__textarea" rows={5} />
+                    </div>
+
+                    <Button variant="primary" type="submit" className="ctf__submit">
+                      <i className="fa-solid fa-paper-plane" />
+                      {contact.form.button}
+                    </Button>
+                  </form>
+                </>
+              )}
             </motion.div>
 
             {/* Right — Info */}

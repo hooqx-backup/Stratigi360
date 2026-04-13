@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useBreadcrumbs } from '../../../../context/NavigationHistoryContext'
 import HeroNav from '../../../../components/ui/HeroNav/HeroNav'
 import heroBg from '../../../../assets/images/about/Group-154.webp'
 import './AboutHeroSection.css'
@@ -55,7 +56,9 @@ const particles = [
 ]
 
 /* ── Component ─────────────────────────────────────── */
-const AboutHeroSection = () => (
+const AboutHeroSection = () => {
+  const crumbs = useBreadcrumbs()
+  return (
   <section className="ab-hero" style={{ backgroundImage: `url(${heroBg})` }}>
     <div className="ab-hero__overlay" />
     <div className="ab-hero__pattern" />
@@ -92,9 +95,15 @@ const AboutHeroSection = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <Link to="/">Home</Link>
-        <i className="fa-solid fa-angle-right" />
-        <span>About Us</span>
+        {crumbs.map((crumb, i) => (
+          <span key={crumb.path} style={{ display: 'contents' }}>
+            {i > 0 && <i className="fa-solid fa-angle-right" />}
+            {crumb.isCurrent
+              ? <span>{crumb.label}</span>
+              : <Link to={crumb.path}>{crumb.label}</Link>
+            }
+          </span>
+        ))}
       </motion.div>
 
       {/* Badge */}
@@ -199,6 +208,7 @@ const AboutHeroSection = () => (
       </div>
     </motion.div>
   </section>
-)
+  )
+}
 
 export default AboutHeroSection

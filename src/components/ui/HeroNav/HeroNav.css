@@ -32,6 +32,7 @@
   background-color: transparent !important;
   border-bottom-color: transparent !important;
   box-shadow: none !important;
+  pointer-events: none; /* let clicks pass through to the overlay's close button */
 }
 
 .hn__inner {
@@ -134,10 +135,12 @@
   background-color: var(--color-white) !important;
 }
 
-/* Morph to × */
-.hn__hamburger--open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hn__hamburger--open span:nth-child(2) { opacity: 0; width: 0; }
-.hn__hamburger--open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* Hide hamburger when overlay is open — the overlay's own × button handles close */
+.hn__hamburger--open {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
 
 
 /* ══════════════════════════════════════════
@@ -166,6 +169,50 @@
 .hn__overlay--open {
   clip-path: circle(170% at calc(100% - 28px) 35px);
   pointer-events: all;
+}
+
+/* ── Close button (X) inside the overlay ── */
+.hn__close {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  padding: 0;
+  opacity: 0;
+  transform: rotate(-45deg) scale(0.6);
+  transition:
+    opacity   0.3s ease,
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.45s;
+}
+
+.hn__overlay--open .hn__close {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.hn__close span {
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+}
+
+.hn__close span:nth-child(1) { transform: rotate(45deg); }
+.hn__close span:nth-child(2) { transform: rotate(-45deg); }
+
+.hn__close:hover span {
+  background-color: var(--color-white);
 }
 
 /* ── Decorative rings ── */

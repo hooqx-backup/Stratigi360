@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useBreadcrumbs } from '../../context/NavigationHistoryContext'
 import { motion, useReducedMotion } from 'framer-motion'
 import content from '../../locales/en.json'
 import HeroNav from '../../components/ui/HeroNav/HeroNav'
@@ -9,6 +10,7 @@ import './PrivacyPolicy.css'
 const { privacy, site } = content
 
 const PrivacyPolicy = () => {
+  const crumbs = useBreadcrumbs()
   const [activeId, setActiveId] = useState(privacy.sections[0].id)
   const shouldReduceMotion = useReducedMotion()
   const pageViewport = shouldReduceMotion ? { once: true } : viewportOnce
@@ -44,9 +46,15 @@ const PrivacyPolicy = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <Link to="/">Home</Link>
-              <i className="fa-solid fa-angle-right" />
-              <span>Privacy Policy</span>
+              {crumbs.map((crumb, i) => (
+                <span key={crumb.path} style={{ display: 'contents' }}>
+                  {i > 0 && <i className="fa-solid fa-angle-right" />}
+                  {crumb.isCurrent
+                    ? <span>{crumb.label}</span>
+                    : <Link to={crumb.path}>{crumb.label}</Link>
+                  }
+                </span>
+              ))}
             </motion.div>
 
             <motion.span

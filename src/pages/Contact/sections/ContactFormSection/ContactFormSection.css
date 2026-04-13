@@ -428,6 +428,67 @@ a.ctf__info-value:hover { color: var(--color-accent); }
   display: block;
 }
 
+/* ── Form success state ── */
+.ctf__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 16px;
+  min-height: 360px;
+}
+
+.ctf__success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(34, 197, 94, 0.1);
+  border: 2px solid rgba(34, 197, 94, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #22c55e;
+  margin-bottom: 24px;
+}
+
+.ctf__success-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: 0 0 12px;
+}
+
+.ctf__success-body {
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  max-width: 320px;
+  margin: 0 0 32px;
+}
+
+.ctf__success-reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: border-color 0.22s ease, color 0.22s ease;
+}
+
+.ctf__success-reset:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
 /* ── Responsive ── */
 @media (max-width: 1024px) {
   .ctf__grid { gap: 40px; }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import content from '../../locales/en.json'
 import Button from '../../components/ui/Button/Button'
@@ -7,10 +7,47 @@ import logoWhiteImg from '../../assets/images/STRATIGI-PNG-white-1.png'
 import './Navbar.css'
 
 const { nav } = content
+const MENU_ANIMATION_MS = 600
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [menuClosing, setMenuClosing] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const closeTimerRef = useRef(null)
+
+  const clearCloseTimer = () => {
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current)
+      closeTimerRef.current = null
+    }
+  }
+
+  const closeMenu = () => {
+    if (!menuOpen) return
+    setMenuOpen(false)
+    setMenuClosing(true)
+    clearCloseTimer()
+    closeTimerRef.current = window.setTimeout(() => {
+      setMenuClosing(false)
+      closeTimerRef.current = null
+    }, MENU_ANIMATION_MS)
+  }
+
+  const openMenu = () => {
+    clearCloseTimer()
+    setMenuClosing(false)
+    setMenuOpen(true)
+  }
+
+  const toggleMenu = () => {
+    if (menuOpen) {
+      closeMenu()
+      return
+    }
+    openMenu()
+  }
+
+  const menuVisualOpen = menuOpen || menuClosing
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -19,23 +56,25 @@ const Navbar = () => {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    document.body.style.overflow = menuVisualOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
-  }, [menuOpen])
+  }, [menuVisualOpen])
 
-  const closeMenu = () => setMenuOpen(false)
+  useEffect(() => {
+    return () => clearCloseTimer()
+  }, [])
 
   return (
     <header className="header">
 
       {/* ── Navbar – sticky ── */}
-      <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${menuOpen ? 'navbar--menu-open' : ''}`}>
+      <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''} ${menuVisualOpen ? 'navbar--menu-open' : ''}`}>
         <div className="container navbar__inner">
 
           {/* Logo */}
           <Link to="/" className="navbar__logo" onClick={closeMenu}>
             <img
-              src={menuOpen ? logoWhiteImg : logoImg}
+              src={menuVisualOpen ? logoWhiteImg : logoImg}
               alt="Stratigi360"
               className="navbar__logo-img"
             />
@@ -64,10 +103,10 @@ const Navbar = () => {
               {nav.cta}
             </Button>
             <button
-              className={`hamburger ${menuOpen ? 'hamburger--open' : ''}`}
-              onClick={() => setMenuOpen((v) => !v)}
+              className={`hamburger ${menuVisualOpen ? 'hamburger--open' : ''}`}
+              onClick={toggleMenu}
               aria-label="Toggle menu"
-              aria-expanded={menuOpen}
+              aria-expanded={menuVisualOpen}
             >
               <span /><span /><span />
             </button>
@@ -79,7 +118,7 @@ const Navbar = () => {
       {/* ── Full-screen overlay — always mounted for smooth clip-path animation ── */}
       <div
         className={`mobile-menu ${menuOpen ? 'mobile-menu--open' : ''}`}
-        aria-hidden={!menuOpen}
+        aria-hidden={!menuVisualOpen}
       >
         {/* Decorative rings */}
         <span className="mobile-menu__ring mobile-menu__ring--1" />
