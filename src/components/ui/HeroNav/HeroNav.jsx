@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { Link, NavLink } from 'react-router-dom'
 import content from '../../../locales/en.json'
@@ -8,6 +8,7 @@ import logoWhite from '../../../assets/images/STRATIGI-PNG-white-1.png'
 import './HeroNav.css'
 
 const { nav } = content
+const OVERLAY_ANIMATION_MS = 700
 
 /**
  * Shared sticky navbar used by every page/hero section.
@@ -19,7 +20,43 @@ const { nav } = content
  */
 const HeroNav = ({ dark = false }) => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [menuClosing, setMenuClosing] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const closeTimerRef = useRef(null)
+
+  const clearCloseTimer = () => {
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current)
+      closeTimerRef.current = null
+    }
+  }
+
+  const closeMenu = () => {
+    if (!menuOpen) return
+    setMenuOpen(false)
+    setMenuClosing(true)
+    clearCloseTimer()
+    closeTimerRef.current = window.setTimeout(() => {
+      setMenuClosing(false)
+      closeTimerRef.current = null
+    }, OVERLAY_ANIMATION_MS)
+  }
+
+  const openMenu = () => {
+    clearCloseTimer()
+    setMenuClosing(false)
+    setMenuOpen(true)
+  }
+
+  const toggleMenu = () => {
+    if (menuOpen) {
+      closeMenu()
+      return
+    }
+    openMenu()
+  }
+
+  const menuVisualOpen = menuOpen || menuClosing
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10)
@@ -28,14 +65,16 @@ const HeroNav = ({ dark = false }) => {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    document.body.style.overflow = menuVisualOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
-  }, [menuOpen])
+  }, [menuVisualOpen])
 
-  const closeMenu = () => setMenuOpen(false)
+  useEffect(() => {
+    return () => clearCloseTimer()
+  }, [])
 
   const currentLogo =
-    menuOpen          ? logoWhite :
+    menuVisualOpen    ? logoWhite :
     dark && !scrolled ? logoWhite :
                         logoDark
 
@@ -43,14 +82,24 @@ const HeroNav = ({ dark = false }) => {
     'hn',
     dark    && 'hn--dark',
     scrolled && 'hn--scrolled',
-    menuOpen && 'hn--menu-open',
+    menuVisualOpen && 'hn--menu-open',
   ].filter(Boolean).join(' ')
 
   const overlay = (
     <div
       className={`hn__overlay ${menuOpen ? 'hn__overlay--open' : ''}`}
-      aria-hidden={!menuOpen}
+      aria-hidden={!menuVisualOpen}
     >
+      {/* Close button — always visible inside the overlay on every page */}
+      <button
+        className="hn__close"
+        onClick={closeMenu}
+        aria-label="Close menu"
+      >
+        <span />
+        <span />
+      </button>
+
       <span className="hn__ring hn__ring--1" aria-hidden="true" />
       <span className="hn__ring hn__ring--2" aria-hidden="true" />
       <span className="hn__ring hn__ring--3" aria-hidden="true" />
@@ -112,10 +161,10 @@ const HeroNav = ({ dark = false }) => {
               {nav.cta}
             </Button>
             <button
-              className={`hn__hamburger${menuOpen ? ' hn__hamburger--open' : ''}`}
-              onClick={() => setMenuOpen((prev) => !prev)}
-              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={menuOpen}
+              className={`hn__hamburger${menuVisualOpen ? ' hn__hamburger--open' : ''}`}
+              onClick={toggleMenu}
+              aria-label={menuVisualOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuVisualOpen}
               aria-controls="mobile-nav-overlay"
             >
               <span />

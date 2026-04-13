@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { useBreadcrumbs } from '../../../../context/NavigationHistoryContext'
 import { motion } from 'framer-motion'
 import content from '../../../../locales/en.json'
 import Button from '../../../../components/ui/Button/Button'
@@ -9,6 +10,7 @@ import './ContactHeroSection.css'
 const { contact } = content
 
 const ContactHeroSection = () => {
+  const crumbs = useBreadcrumbs()
   return (
     <section className="ct-hero" style={{ backgroundImage: `url(${heroBg})` }}>
       <div className="ct-hero__overlay" />
@@ -27,9 +29,15 @@ const ContactHeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Link to="/">Home</Link>
-            <i className="fa-solid fa-angle-right" />
-            <span>Contact Us</span>
+            {crumbs.map((crumb, i) => (
+              <span key={crumb.path} style={{ display: 'contents' }}>
+                {i > 0 && <i className="fa-solid fa-angle-right" />}
+                {crumb.isCurrent
+                  ? <span>{crumb.label}</span>
+                  : <Link to={crumb.path}>{crumb.label}</Link>
+                }
+              </span>
+            ))}
           </motion.div>
 
           <motion.span

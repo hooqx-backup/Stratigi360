@@ -5,7 +5,7 @@ import content from '../../../../locales/en.json'
 import { viewportOnce, staggerContainer, fadeUp } from '../../../../utils/motionVariants'
 import './ServicesGridSection.css'
 
-const { services } = content
+const { servicesPage: services } = content
 
 /* ── Animation variants ── */
 const headerVariants = {

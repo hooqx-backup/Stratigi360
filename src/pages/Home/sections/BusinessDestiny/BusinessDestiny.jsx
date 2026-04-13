@@ -5,7 +5,7 @@ import { fadeLeft, staggerContainer, viewportOnce } from '../../../../utils/moti
 
 const content = {
   heading: "Master Your Business Destiny with Stratigi360's Expertise.",
-  subHeading: "Get the real services and constant and support you need to set up your business",
+  subHeading: "Get the worry-free services and consistent support you need to set up your business ",
   skylineImage: "https://i.imgur.com/your-skyline-placeholder.png"
 };
 

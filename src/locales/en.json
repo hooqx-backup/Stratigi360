@@ -46,7 +46,7 @@
   },
   "about": {
     "heading": "About Us",
-    "body": "Welcome to Stratigi360 – where your success is not just a goal; it's our mission! We're not just a company; we're your dynamic ally in navigating the intricate world of business in Dubai. Whether you're a startup aiming for the stars or an international business seeking a smooth journey, we've got your back.",
+    "body": "Welcome to Stratigi360, a beacon of innovation and efficiency in the world of business setup services where we redefine the process of establishing your business, making it seamless and stress-free. Our commitment to transparency, efficiency, and personalized service sets us apart. Specializing in a range of vital services, including business consultations, setup, legal & tax consultations, operations consultation, collateral building, marketing management, digital solutions, virtual assistance (BPO/KPO), and investment & financial consultations, we are your one-stop solution for comprehensive business support  ",
     "body2": "Our services are more than just paperwork; they're the building blocks of your success. From setting up your company with ease to handling government registrations, meticulous financial management, and ensuring annual compliance – we cover it all.",
     "cta": "Know More"
   },
@@ -86,19 +86,81 @@
         "icon": "fa-lightbulb",
         "title": "Business Consultation",
         "category": "Consultation",
+        "description": "Our consultation experts provide tailored solutions to optimize your business strategies and propel growth. Trust us to be your partner in success, offering insightful guidance for a thriving venture"
+      },
+      {
+        "icon": "fa-scale-balanced",
+        "title": "Legal & Tax Consultation",
+        "category": "Consultation",
+        "description": "Stratigi360 encompasses leading legal and tax consultants with a highly dynamic workforce that offer precise guidance to ensure compliance and optimize your financial strategies"
+      },
+      {
+        "icon": "fa-building",
+        "title": "Business Setup",
+        "category": "Business Setup",
+        "description": "Easily set up your business with vital Statigi360 guidance, as we specialize in seamless business setup solutions, consulting you through the intricacies of establishing and expanding your venture."
+      },
+      {
+        "icon": "fa-palette",
+        "title": "Collateral Building",
+        "category": "Business Setup",
+        "description": "As one of the industry leaders, our team will always give you the most optimum solutions. We excel in collateral building, crafting impactful tools to enhance your brand presence and credibility."
+      },
+      {
+        "icon": "fa-gears",
+        "title": "Operations Consultation",
+        "category": "Consultation",
+        "description": "We specialise in the development and implementation of business operational strategies, where our team streamlines your business processes for optimal efficiency"
+      },
+      {
+        "icon": "fa-bullhorn",
+        "title": "Marketing Management",
+        "category": "Digital & Marketing",
+        "description": "We have an ample amount of experience in marketing management to grow your business by guiding your brand to new heights with strategic campaigns and impactful strategies"
+      },
+      {
+        "icon": "fa-laptop-code",
+        "title": "Digital Solutions",
+        "category": "Digital & Marketing",
+        "description": "Stratigi360 provides end-to-end Digital Solutions services to your business. Our team transforms your business with cutting-edge technology and innovative strategies."
+      },
+      {
+        "icon": "fa-headset",
+        "title": "Virtual Assistance (BPO/KPO)",
+        "category": "Digital & Marketing",
+        "description": "If you need a virtual assistant who can keep up, hire our qualified & experienced virtual assistants that offer reliable support, enhancing your business efficiency with expert outsourcing solutions"
+      },
+      {
+        "icon": "fa-chart-line",
+        "title": "Investment & Financial Consultation",
+        "category": "Consultation",
+        "description": "We are the fastest-growing Financial Consultancy offering custom solutions in the field of investment. Our experts provide strategic guidance to optimize your financial success."
+      }
+    ]
+  },
+  "servicesPage": {
+    "label": "Our Services",
+    "heading": "Comprehensive Solutions for Every Business Need",
+    "subheading": "From strategy to execution, we cover all aspects of your business journey.",
+    "tabs": ["All", "Consultation", "Business Setup", "Digital & Marketing"],
+    "items": [
+      {
+        "icon": "fa-lightbulb",
+        "title": "Business Consultation",
+        "category": "Consultation",
         "description": "Start your dream business in Dubai with expert consultation at every step of the way."
       },
       {
         "icon": "fa-scale-balanced",
         "title": "Legal & Tax Consultation",
         "category": "Consultation",
-        "description": "Stratigi360 is one of Dubai's leading legal and tax consultants with a dynamic workforce."
+        "description": "360 Stratigi is one of Dubai's Leading legal and tax consultants with a dynamic workforce."
       },
       {
         "icon": "fa-building",
         "title": "Business Setup",
         "category": "Business Setup",
-        "description": "Easily set up for business in Dubai as a foreigner with Stratigi360 guidance."
+        "description": "Easily set up for Business in Dubai as a foreigner with The 360 Stategi guidance."
       },
       {
         "icon": "fa-palette",
@@ -110,7 +172,7 @@
         "icon": "fa-gears",
         "title": "Operations Consultation",
         "category": "Consultation",
-        "description": "We specialise in the development and implementation of business operational strategies."
+        "description": "We specialise in the development and implementation of business operational strategies"
       },
       {
         "icon": "fa-bullhorn",
@@ -122,7 +184,7 @@
         "icon": "fa-laptop-code",
         "title": "Digital Solutions",
         "category": "Digital & Marketing",
-        "description": "Stratigi360 provides end-to-end Digital Solutions services to businesses in Dubai."
+        "description": "360 Stratigi provides end-to-end Digital Solutions services to businesses in Dubai."
       },
       {
         "icon": "fa-headset",
@@ -134,7 +196,7 @@
         "icon": "fa-chart-line",
         "title": "Investment & Financial Consultation",
         "category": "Consultation",
-        "description": "We are the fastest-growing Financial Consultancy offering custom solutions in the field of investment."
+        "description": "We are the fastest-growing Financial Consultancy offering custom solutions in the field of investment. "
       }
     ]
   },
@@ -162,7 +224,7 @@
     "label": "Cost Calculator",
     "heading": "Discover Your Business Setup Cost",
     "headingAccent": "Instantly",
-    "subheading": "Get a transparent, personalised cost estimate for setting up your business in Dubai — no hidden fees, no surprises.",
+    "subheading": " Streamlined Solutions for Your Entrepreneurial Journey!",
     "cta": "Try Cost Calculator",
     "ctaSecondary": "Talk to an Expert",
     "trust": [
@@ -179,7 +241,7 @@
   "partners": {
     "label": "Trusted By",
     "heading": "Our Partners",
-    "subheading": "Powering growth for businesses across Dubai and beyond."
+    "subheading": "Powering growth for businesses across Globe"
   },
   "testimonials": {
     "label": "Testimonials",
@@ -245,7 +307,7 @@
   },
   "contact": {
     "label": "Contact Us",
-    "heading": "Get in Touch With Our Experts",
+    "heading": "Let's Talk - Stratigic Conversations!",
     "subheading": "Ready to start your business journey? Our team is here to guide you every step of the way.",
     "cta_primary": "Call Us Now",
     "cta_secondary": "Send a Message",
@@ -270,7 +332,7 @@
     }
   },
   "footer": {
-    "description": "Tech-powered legal and tax solutions for startups and international businesses looking to establish or expand globally.",
+    "description": "Stratigi360 is a tech-powered company designed to cater to both start ups and international businesses’ legal & tax necessities globally.",
     "quick_links": {
       "heading": "Quick Links",
       "links": [

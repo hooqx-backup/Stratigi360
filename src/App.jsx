@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
+import { NavHistoryProvider } from './context/NavigationHistoryContext'
 
 const ScrollToTopOnNavigate = () => {
   const { pathname } = useLocation()
@@ -25,6 +26,7 @@ import WhatsAppButton from './components/ui/WhatsAppButton/WhatsAppButton'
 function App() {
   return (
     <BrowserRouter>
+      <NavHistoryProvider>
       <ScrollToTopOnNavigate />
       <Toaster
         position="top-right"
@@ -73,6 +75,7 @@ function App() {
       <Footer />
       <ScrollToTop />
       <WhatsAppButton />
+      </NavHistoryProvider>
     </BrowserRouter>
   )
 }
